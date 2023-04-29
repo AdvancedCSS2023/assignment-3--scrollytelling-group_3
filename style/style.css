@@ -1,46 +1,448 @@
-/* CSS HEX */
---baby-powder: #f5f7f3;
---columbia-blue: #bdd2ea;
---cambridge-blue: #9aac8a;
---battleship-gray: #939598;
---celestial-blue: #4f99cc;
---fern-green: #48773e;
---cinnabar: #ef402b;
+/* Define variables for colors */
+:root {
+    --background-color: #f5f7f3;
 
+    --background-one: grey;
+    --background-two: cyan;
+    --background-three: yellow;
+    --background-four: blue;
+    --background-five: purple;
+    --background-six: magenta;
+
+    --columbia-blue: #bdd2ea;
+    --cambridge-blue: #9aac8a;
+    --battleship-gray: #939598;
+    --celestial-blue: #4f99cc;
+    --fern-green: #48773e;
+    --cinnabar: #ef402b;
+}
+
+/* ###################################################### */
+/*                       General Rules                    */
+/* ###################################################### */
 * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 
+    max-height: 100%;
+    max-width: 100%;
+
+    border: 1px solid red;
+}
+
+/*helps with overflow on pictures*/
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-height: 100%;
+    max-width: 100%;
+
+    object-fit: cover;
+}
+
+@font-face {
+    font-family: kiddy;
+    src: url(../assets/fonts/Kiddy\ Play.ttf);
+}
+
+body {
+    background: var();
+    padding: 0.5%;
+
+    font-family: kiddy, Helvetica, sans-serif;
+    color: var(--text-color);
+    letter-spacing: 1px;
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+}
+
+header {
+    overflow: hidden;
+
+    background-color: transparent;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 99;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    display: inline-block;
+    margin-right: 1.2em;
+    list-style-type: none;
+}
+
+header a {
+    display: block;
+    padding: 0.5em 1em;
+
+    text-transform: uppercase;
+    line-height: 2em;
+    letter-spacing: 0.03em;
+
+    font-weight: bold;
+}
+
+header a:link {
+    color: #D54215;
+}
+
+header a:visited {
+    color: #D54215;
+}
+
+header a:hover {
+    color: #007dbc;
+}
+
+header a:active {
+    color: black;
+}
+
+header img {
+    float: left;
+
+    margin: 10px 15px 15px 10px;
+
+    width: 50px;
+    height: auto;
+}
+
+nav {
+    float: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    place-items: center;
+    height: 100vh;
+    letter-spacing: 0.2em;
+}
+
+.scene, .frame, footer {
+    display: grid;
 }
 
 .scene {
-
+    position: relative;
+    text-align: center;
 }
 
-.one {
+.frame {
+    background-color: white;
 
+    height: 95%;
+    width: 95%;
 }
 
-.two {
-
+h1, h2 {
+    font-size: 1.2em;
+    text-transform: uppercase;
 }
 
-.three {
-
-}
-
-.four {
-
-}
-
-.five {
-
-}
-
-.six {
+p {
     
 }
 
-In Assignment 2 and Assignment 3 you are required to
-create and use a simple Separation of Concerns.
+footer {
+    background-color: white;
 
-In Assignment 2 and Assignment 3 you are required to
-use BEM methodology.
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+        ". .";
+}
+
+
+/* ###################################################### */
+/*                        Main elements                   */
+/* ###################################################### */
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+    display: grid;
+    gap: 1% 1%;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+/* ###################################################### */
+/*                        scene one                       */
+/* ###################################################### */
+.one {
+    background-color: var(--background-one);
+    grid-template-columns: repeat(1, 0.7fr 1fr 0.7fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        ". one-title1 ."
+        ". . ."
+        ". one-title2 .";
+}
+
+.one-title1 {
+    grid-area: one-title1;
+}
+
+.one-title2 {
+    grid-area: one-title2;
+}
+
+.one img {
+    height: 15em;
+    width: 100%;
+}
+
+/* ###################################################### */
+/*                        scene two                       */
+/* ###################################################### */
+.two {
+    background-color: var(--background-two);
+
+    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "two-picture two-text two-text"
+        ". . thermometer"
+        ". . thermometer";
+}
+
+.two-picture {
+    grid-area: two-picture;
+}
+.two-text {
+    grid-area: two-text;
+}
+
+.thermometer {
+    grid-area: thermometer;
+}
+
+.two img {
+    height: 15em;
+    width: 100%;
+}
+
+/* Thermometer column and text */
+.thermometer {
+    position: relative;
+
+    height: 150px;
+    width: 30px;
+
+    right: ;
+    top: ;
+
+    border-radius: 22px 22px 0 0;
+    border: 5px solid #4a1c03;
+    border-bottom: none;
+    box-shadow: inset 0 0 0 4px #fff;
+
+    transform: scale(2);
+}
+
+/* Thermometer Bulb */
+.thermometer:before {
+    content: " ";
+    position: absolute;
+    background: #db3f02;
+    border-radius: 44px;
+    border: 5px solid #4a1c03;
+    box-shadow: inset 0 0 0 4px #fff;
+
+    height: 52px;
+    width: 52px;
+
+    top: 141px;
+    left: -21px;
+
+    z-index: 2;
+    /* Place the bulb under the column */
+}
+
+/* This piece here connects the column with the bulb */
+.thermometer:after {
+    content: " ";
+    position: absolute;
+    background: blue;
+
+    height: 15px;
+    width: 20px;
+    box-shadow: inset 0 0 0 3px #fff;
+
+    top: 135px;
+    left: 0px;
+
+    z-index: 3;
+}
+
+.mercury {
+    position: absolute;
+    background-color: red;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 0 0 3px #fff;
+
+    height: 0;
+    width: 100%;
+
+    bottom: 0;
+
+    z-index: 1;
+
+    animation: 6s linear forwards risen;
+}
+
+/*.thermometer:hover .mercury {
+    height: 90%;
+  }*/
+
+@keyframes risen {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 90%;
+    }
+}
+
+/* ###################################################### */
+/*                       scene three                      */
+/* ###################################################### */
+.three {
+    background-color: var(--background-three);
+
+    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        ". . ."
+        ". . three-picture"
+        "three-text three-text three-picture";
+}
+
+.three-text {
+    grid-area: three-text;
+    z-index: 1;
+}
+
+.three-picture {
+    grid-area: three-picture;
+    z-index: 1;
+}
+
+.three-ground {
+    position: absolute;
+background-color: #4a1c03;
+
+    height: 25%;
+    width: 95%;
+
+    left: 2.5rem;
+    bottom: 1.4rem;
+}
+
+.three-ground::after {
+    content: '';
+    position: absolute;
+background-color: blueviolet;
+
+height: 95%;
+width: 95%;
+
+right: 2.5rem;
+bottom: 1.4rem;
+}
+
+/* ###################################################### */
+/*                        scene four                      */
+/* ###################################################### */
+.four {
+    background-color: var(--background-four);
+}
+
+
+/* ###################################################### */
+/*                       scene five                       */
+/* ###################################################### */
+.five {
+    background-color: var(--background-five);
+
+    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        ". . ."
+        ". . ."
+}
+
+.five img {
+    height: 20em;
+    width: 100%;
+
+    border: 2px solid greenyellow;
+}
+
+/* ###################################################### */
+/*                        scene six                       */
+/* ###################################################### */
+.six {
+    background-color: var(--background-six);
+
+    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "six-text six-text six-picture"
+        "six-help six-help back-up ";
+}
+
+.six-text {
+    grid-area: six-text;
+}
+
+.six-picture {
+    grid-area: six-picture;
+}
+
+.six-help {
+    grid-area: six-help;
+}
+
+.back-up  {
+    grid-area: back-up ;
+}
+
+/* scroll up button */
+.back-up {
+    position: fixed;
+    background-color: greenyellow;
+    border-radius: 50%;
+    text-align: center;
+    font-size: x-large;
+
+    height: 4.5%;
+    width: 2.3%;
+
+    bottom: 20px;
+    right: 30px;
+
+    z-index: 99;
+}
+
+In Assignment 2 and Assignment 3 you are required to create and use a simple Separation of Concerns. In Assignment 2 and Assignment 3 you are required to use BEM methodology.
