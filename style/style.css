@@ -43,18 +43,12 @@ img {
     object-fit: cover;
 }
 
-@font-face {
-    font-family: kiddy;
-    src: url(../assets/fonts/Kiddy\ Play.ttf);
-}
-
 body {
     background: var();
     padding: 0.5%;
 
-    font-family: kiddy, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
-    letter-spacing: 1px;
 
     overflow-x: hidden;
 
@@ -65,11 +59,6 @@ header {
     overflow: hidden;
 
     background-color: transparent;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 99;
 }
 
 header ul {
@@ -130,10 +119,11 @@ a {
 section {
     place-items: center;
     height: 100vh;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3px;
 }
 
-.scene, .frame, footer {
+.scene,
+.frame {
     display: grid;
 }
 
@@ -149,21 +139,37 @@ section {
     width: 95%;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-size: 1.2em;
     text-transform: uppercase;
 }
 
-p {
-    
-}
+p {}
 
 footer {
-    background-color: white;
+    position: absolute;
+    background-color: lightcoral;
+    width: 95%;
+}
 
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas:
-        ". .";
+.back-up {
+    grid-area: back-up;
+}
+
+/* scroll up button */
+.back-up {
+    position: absolute;
+    background-color: greenyellow;
+    border-radius: 50%;
+    text-align: center;
+    font-size: x-large;
+
+    height: 60px;
+    width: 40px;
+
+    bottom: 40px;
+    left: 95%;
 }
 
 
@@ -228,6 +234,7 @@ footer {
 .two-picture {
     grid-area: two-picture;
 }
+
 .two-text {
     grid-area: two-text;
 }
@@ -307,22 +314,16 @@ footer {
 
     z-index: 1;
 
-    animation: 6s linear forwards risen;
+  transition: height 2s ease-out;
+	transition-delay: 0.4s; 
 }
 
-/*.thermometer:hover .mercury {
+.animation-mercury {
     height: 90%;
-  }*/
-
-@keyframes risen {
-    from {
-        height: 0;
-    }
-
-    to {
-        height: 90%;
-    }
 }
+
+
+
 
 /* ###################################################### */
 /*                       scene three                      */
@@ -340,35 +341,52 @@ footer {
 
 .three-text {
     grid-area: three-text;
-    z-index: 1;
+    z-index: 3;
 }
 
-.three-picture {
+.three-picture1 {
     grid-area: three-picture;
-    z-index: 1;
+    z-index: 3;
 }
 
 .three-ground {
     position: absolute;
-background-color: #4a1c03;
+    background-color: #4a1c03;
+    clip-path: polygon(65% 47%, 100% 46%, 100% 100%, 0 100%, 0 71%);
 
-    height: 25%;
+    height: 100%;
     width: 95%;
 
-    left: 2.5rem;
     bottom: 1.4rem;
+
+    z-index: 2;
 }
 
-.three-ground::after {
-    content: '';
+.three-picture2 {
     position: absolute;
-background-color: blueviolet;
 
-height: 95%;
-width: 95%;
+    height: 300px;
+    width: 300px;
 
-right: 2.5rem;
-bottom: 1.4rem;
+    right: 10%;
+    top: 12%;
+}
+
+.three-wave {
+    position: absolute;
+    background-color: blue;
+    --mask:
+          radial-gradient(72.11px at 50% 100.00px,#000 99%,#0000 101%) calc(50% - 80px) 0/160px 100%,
+          radial-gradient(72.11px at 50% -60px,#0000 99%,#000 101%) 50% 40px/160px 100% repeat-x;
+        -webkit-mask: var(--mask);
+                mask: var(--mask);
+
+    height: 45%;
+    width: 95%;
+
+    bottom: 1.4rem;
+
+    z-index: 1;
 }
 
 /* ###################################################### */
@@ -409,7 +427,7 @@ bottom: 1.4rem;
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
         "six-text six-text six-picture"
-        "six-help six-help back-up ";
+        "six-help six-help .";
 }
 
 .six-text {
@@ -422,27 +440,6 @@ bottom: 1.4rem;
 
 .six-help {
     grid-area: six-help;
-}
-
-.back-up  {
-    grid-area: back-up ;
-}
-
-/* scroll up button */
-.back-up {
-    position: fixed;
-    background-color: greenyellow;
-    border-radius: 50%;
-    text-align: center;
-    font-size: x-large;
-
-    height: 4.5%;
-    width: 2.3%;
-
-    bottom: 20px;
-    right: 30px;
-
-    z-index: 99;
 }
 
 In Assignment 2 and Assignment 3 you are required to create and use a simple Separation of Concerns. In Assignment 2 and Assignment 3 you are required to use BEM methodology.

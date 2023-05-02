@@ -1,24 +1,22 @@
-//STEP 1 - choose element to observe 
-const sections = document.querySelectorAll("span");
+//The code selects all elements with a class of 'mercury' and assigns them to the scrollAnimations variable using the document.querySelectorAll() method.
+const scrollAnimations = document.querySelectorAll('.mercury');
 
-/****** INTERSECTION OBSERVER  ******/
-//STEP 2 - declare options
-const options = {};
-
-//STEP 3 - tell Intersection Observer what should it do with HTML element
-
-const observer = new IntersectionObserver(function (entries, observer) {
+//The code creates an IntersectionObserver and passes it a callback function that is executed when the observed elements intersect with the viewport. The callback function loops through all the entries that intersect with the viewport and adds or removes the class 'animation-mercury' depending on whether the element is intersecting or not.
+const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      return;
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animation-mercury');
+    } else {
+      entry.target.classList.remove('animation-mercury');
     }
-
-//STEP 4 - tell intersection observer how to behav
-    entry.target.classList.toggle("purple");
-  });
-}, options);
-
-//STEP 5 - adding observer to HTML element
-sections.forEach((span) => {
-  observer.observe(span);
+  })
+}, {
+  threshold: 0.4
 });
+
+//The observer is set up to watch all the scrollAnimations elements that were selected in step 1. This is done by looping through all the elements in scrollAnimations and calling the observe() method on the IntersectionObserver instance for each element.
+for (let i = 0; i < scrollAnimations.length; i++) {
+  const el = scrollAnimations[i];
+
+  observer.observe(el);
+}
