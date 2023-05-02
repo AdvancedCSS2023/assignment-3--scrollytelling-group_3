@@ -9,11 +9,15 @@
     --background-five: purple;
     --background-six: magenta;
 
-    --columbia-blue: #bdd2ea;
+    --columbia-blue: #C6CDE1;
     --cambridge-blue: #9aac8a;
     --battleship-gray: #939598;
     --celestial-blue: #4f99cc;
     --fern-green: #48773e;
+    --cinnabar: #ef402b;
+
+    --light-green: #A7C4A1;
+    --dark-green: #2A4524;
     --cinnabar: #ef402b;
 }
 
@@ -44,8 +48,7 @@ img {
 }
 
 body {
-    background: var();
-    padding: 0.5%;
+    background: var(--background-color);
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
@@ -129,12 +132,33 @@ section {
 
 .scene {
     position: relative;
+    background-color: var( --dark-green);
     text-align: center;
 }
 
-.frame {
-    background-color: white;
+.scene:nth-of-type(2) {
+    background-color: var(--columbia-blue);
+}
 
+.scene:nth-of-type(3) {
+    background-color: var(--background-one);
+}
+
+.scene:nth-of-type(4) {
+   background: url(../assets/images/under-water.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;;
+}
+
+.scene:nth-of-type(5) {
+    background-color: var(--background-one);
+}
+
+.scene:nth-of-type(6) {
+    background-color: var(--background-one);
+}
+
+.frame {
     height: 95%;
     width: 95%;
 }
@@ -148,43 +172,41 @@ h2 {
 p {}
 
 footer {
-    position: absolute;
     background-color: lightcoral;
-    width: 95%;
+
+    display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-areas: 
+    ". ."; 
 }
 
-.back-up {
-    grid-area: back-up;
-}
 
 /* scroll up button */
 .back-up {
-    position: absolute;
     background-color: greenyellow;
     border-radius: 50%;
     text-align: center;
     font-size: x-large;
 
-    height: 60px;
+    height: 40px;
     width: 40px;
 
-    bottom: 40px;
-    left: 95%;
+    bottom: 0;
+    right: 0;
 }
 
 
 /* ###################################################### */
 /*                        Main elements                   */
 /* ###################################################### */
-
 .one,
 .two,
 .three,
-.four,
 .five,
 .six {
     display: grid;
     gap: 1% 1%;
+
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -195,34 +217,43 @@ footer {
 /*                        scene one                       */
 /* ###################################################### */
 .one {
-    background-color: var(--background-one);
-    grid-template-columns: repeat(1, 0.7fr 1fr 0.7fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 0.5fr 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-template-areas:
-        ". one-title1 ."
-        ". . ."
-        ". one-title2 .";
+        "one-title1 .";
 }
 
 .one-title1 {
     grid-area: one-title1;
-}
 
-.one-title2 {
-    grid-area: one-title2;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 4%;
+    
+}
+.one-pictures {
+    display: grid; 
+  grid-template-columns: 0.4fr 0.3fr 0.4fr;  
+  grid-auto-rows: 1fr; 
+  gap: 2% 2%; 
+  grid-template-areas: 
+    ". . ."
+    ". . ."; 
+
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+  align-items: center; 
 }
 
 .one img {
-    height: 15em;
-    width: 100%;
+    height: 90%;
+    width: 95%;
 }
 
 /* ###################################################### */
 /*                        scene two                       */
 /* ###################################################### */
 .two {
-    background-color: var(--background-two);
-
     grid-template-columns: repeat(1, 1fr 1fr 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
@@ -314,8 +345,8 @@ footer {
 
     z-index: 1;
 
-  transition: height 2s ease-out;
-	transition-delay: 0.4s; 
+    transition: height 2s ease-out;
+    transition-delay: 0.4s;
 }
 
 .animation-mercury {
@@ -335,8 +366,8 @@ footer {
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
         ". . ."
-        ". . three-picture"
-        "three-text three-text three-picture";
+        ". three-text ."
+        ". . .";
 }
 
 .three-text {
@@ -344,42 +375,14 @@ footer {
     z-index: 3;
 }
 
-.three-picture1 {
-    grid-area: three-picture;
-    z-index: 3;
-}
-
-.three-ground {
-    position: absolute;
-    background-color: #4a1c03;
-    clip-path: polygon(65% 47%, 100% 46%, 100% 100%, 0 100%, 0 71%);
-
-    height: 100%;
-    width: 95%;
-
-    bottom: 1.4rem;
-
-    z-index: 2;
-}
-
-.three-picture2 {
-    position: absolute;
-
-    height: 300px;
-    width: 300px;
-
-    right: 10%;
-    top: 12%;
-}
-
 .three-wave {
     position: absolute;
     background-color: blue;
     --mask:
-          radial-gradient(72.11px at 50% 100.00px,#000 99%,#0000 101%) calc(50% - 80px) 0/160px 100%,
-          radial-gradient(72.11px at 50% -60px,#0000 99%,#000 101%) 50% 40px/160px 100% repeat-x;
-        -webkit-mask: var(--mask);
-                mask: var(--mask);
+        radial-gradient(72.11px at 50% 100.00px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
+        radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 
     height: 45%;
     width: 95%;
@@ -393,7 +396,55 @@ footer {
 /*                        scene four                      */
 /* ###################################################### */
 .four {
-    background-color: var(--background-four);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.8fr 1fr;
+    grid-template-areas:
+        ". . four-text four-text four-text . ."
+        ". . . . . . ."
+        "coral-1 coral-2 coral-3 coral-4 coral-5 coral-6 coral-1-2";
+
+        align-items: end; 
+}
+
+.four-text {
+    grid-area: four-text;
+}
+
+.four-text {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 4%;
+}
+
+.coral-1 {
+    grid-area: coral-1;
+}
+
+.coral-2 {
+    grid-area: coral-2;
+}
+
+.coral-3 {
+    grid-area: coral-3;
+}
+
+.coral-4 {
+    grid-area: coral-4;
+}
+
+.coral-5 {
+    grid-area: coral-5;
+}
+
+.coral-6 {
+    grid-area: coral-6;
+}
+
+.coral-1-2 {
+    grid-area: coral-1-2;
+}
+
+.coral-5-2 {
+    grid-area: coral-5-2;
 }
 
 
@@ -404,14 +455,19 @@ footer {
     background-color: var(--background-five);
 
     grid-template-columns: repeat(1, 1fr 1fr 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 0.3fr 0.3fr 0.3fr; 
     grid-template-areas:
         ". . ."
-        ". . ."
+        ". five-earth-after five-earth-after"
+        ". five-earth-after five-earth-after";
+}
+
+.five-earth-after {
+    grid-area: five-earth-after;
 }
 
 .five img {
-    height: 20em;
+    height: 100%;
     width: 100%;
 
     border: 2px solid greenyellow;
@@ -423,11 +479,11 @@ footer {
 .six {
     background-color: var(--background-six);
 
-    grid-template-columns: repeat(1, 1fr 1fr 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
+    grid-template-rows: repeat(2, 0.5fr);
     grid-template-areas:
-        "six-text six-text six-picture"
-        "six-help six-help .";
+        "six-text six-text six-picture six-picture "
+        "six-timeglass six-help six-help six-help";
 }
 
 .six-text {
@@ -440,6 +496,10 @@ footer {
 
 .six-help {
     grid-area: six-help;
+}
+
+.six-timeglass {
+    grid-area: six-timeglass;
 }
 
 In Assignment 2 and Assignment 3 you are required to create and use a simple Separation of Concerns. In Assignment 2 and Assignment 3 you are required to use BEM methodology.
