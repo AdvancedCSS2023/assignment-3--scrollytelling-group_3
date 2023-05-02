@@ -9,7 +9,8 @@
     --background-five: purple;
     --background-six: magenta;
 
-    --columbia-blue: #C6CDE1;
+    --columbia-blue: #bdd2ea;
+    --fake: #C6CDE1;
     --cambridge-blue: #9aac8a;
     --battleship-gray: #939598;
     --celestial-blue: #4f99cc;
@@ -18,7 +19,6 @@
 
     --light-green: #A7C4A1;
     --dark-green: #2A4524;
-    --cinnabar: #ef402b;
 }
 
 /* ###################################################### */
@@ -132,30 +132,31 @@ section {
 
 .scene {
     position: relative;
-    background-color: var( --dark-green);
+    background-color: var(--dark-green);
     text-align: center;
 }
 
 .scene:nth-of-type(2) {
-    background-color: var(--columbia-blue);
+    background-color: var(--battleship-gray);
 }
 
 .scene:nth-of-type(3) {
-    background-color: var(--background-one);
+    background-color: var(--celestial-blue);
 }
 
 .scene:nth-of-type(4) {
-   background: url(../assets/images/under-water.jpg);
+    background: url(../assets/images/under-water.jpg);
     background-size: cover;
-    background-repeat: no-repeat;;
+    background-repeat: no-repeat;
+    ;
 }
 
 .scene:nth-of-type(5) {
-    background-color: var(--background-one);
+    background-color: var(--battleship-gray);
 }
 
 .scene:nth-of-type(6) {
-    background-color: var(--background-one);
+    background-color: var(--fake);
 }
 
 .frame {
@@ -172,14 +173,11 @@ h2 {
 p {}
 
 footer {
-    background-color: lightcoral;
-
-    display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-areas: 
-    ". ."; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        ". .";
 }
-
 
 /* scroll up button */
 .back-up {
@@ -194,7 +192,6 @@ footer {
     bottom: 0;
     right: 0;
 }
-
 
 /* ###################################################### */
 /*                        Main elements                   */
@@ -226,23 +223,23 @@ footer {
 .one-title1 {
     grid-area: one-title1;
 
-        background: rgba(255, 255, 255, 0.6);
-        padding: 4%;
-    
+    background:rgba(255,255,255, 0.5);
+    padding: 4%;
 }
-.one-pictures {
-    display: grid; 
-  grid-template-columns: 0.4fr 0.3fr 0.4fr;  
-  grid-auto-rows: 1fr; 
-  gap: 2% 2%; 
-  grid-template-areas: 
-    ". . ."
-    ". . ."; 
 
-  justify-content: center; 
-  align-content: center; 
-  justify-items: center; 
-  align-items: center; 
+.one-pictures {
+    display: grid;
+    grid-template-columns: 0.4fr 0.3fr 0.4fr;
+    grid-auto-rows: 1fr;
+    gap: 2% 2%;
+    grid-template-areas:
+        ". . ."
+        ". . .";
+
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
 }
 
 .one img {
@@ -360,8 +357,7 @@ footer {
 /*                       scene three                      */
 /* ###################################################### */
 .three {
-    background-color: var(--background-three);
-
+    background-color: var(--columbia-blue);
     grid-template-columns: repeat(1, 1fr 1fr 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
@@ -377,7 +373,7 @@ footer {
 
 .three-wave {
     position: absolute;
-    background-color: blue;
+    background-color: var(--celestial-blue);
     --mask:
         radial-gradient(72.11px at 50% 100.00px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
         radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
@@ -403,7 +399,7 @@ footer {
         ". . . . . . ."
         "coral-1 coral-2 coral-3 coral-4 coral-5 coral-6 coral-1-2";
 
-        align-items: end; 
+    align-items: end;
 }
 
 .four-text {
@@ -452,10 +448,8 @@ footer {
 /*                       scene five                       */
 /* ###################################################### */
 .five {
-    background-color: var(--background-five);
-
     grid-template-columns: repeat(1, 1fr 1fr 1fr);
-    grid-template-rows: 0.3fr 0.3fr 0.3fr; 
+    grid-template-rows: 0.3fr 0.3fr 0.3fr;
     grid-template-areas:
         ". . ."
         ". five-earth-after five-earth-after"
@@ -477,8 +471,6 @@ footer {
 /*                        scene six                       */
 /* ###################################################### */
 .six {
-    background-color: var(--background-six);
-
     grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
     grid-template-rows: repeat(2, 0.5fr);
     grid-template-areas:
