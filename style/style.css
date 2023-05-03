@@ -12,11 +12,11 @@
     --grey: grey;
 
     --dark-text-color: #08250E;
-    --light-text-color: #f5f7f3; 
-    
+    --light-text-color: #f5f7f3;
 
 
-        --light-green: #A7C4A1;
+
+    --light-green: #A7C4A1;
     --dark-green: #2A4524;
     --columbia-blue: #bdd2ea;
     --fake: #C6CDE1;
@@ -51,12 +51,12 @@ img {
 }
 
 body {
-    background: var(--background-one);
+    background: var(--background-color);
 
     padding: 0;
     margin: 0;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial Narrow', Arial, sans-serif;
     color: var(--text-color);
 
     overflow-x: hidden;
@@ -65,9 +65,9 @@ body {
 }
 
 header {
-    background-color: var(--background-one);
 
-overflow: hidden;
+
+    overflow: hidden;
 }
 
 header ul {
@@ -93,19 +93,19 @@ header a {
 }
 
 header a:link {
-    color: #D54215;
+    color: var(--light-text-color);
 }
 
 header a:visited {
-    color: #D54215;
+    color: var(--dark-text-color);
 }
 
 header a:hover {
-    color: #007dbc;
+    color: var(--red);
 }
 
 header a:active {
-    color: black;
+    color: var(--background-three);
 }
 
 header img {
@@ -143,10 +143,12 @@ section {
 
     background-image: url();
     background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 70%;
+    background-attachment: fixed;
+    background-position: center;
+    
+    background-size: 70%;
 }
+
 .scene:nth-of-type(1) {
     background-color: var(--background-one);
 }
@@ -180,15 +182,25 @@ section {
 h1 {
     font-size: 2.5em;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 1.5em;
     margin: 1em;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-p {}
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: x-large;
+    letter-spacing: 1px;
+    text-align: left;
+}
 
 footer {
     display: grid;
@@ -196,21 +208,25 @@ footer {
     grid-template-areas:
         ". .";
 
-        color: var(--light-text-color);
+    color: var(--dark-text-color);
+    
+  align-items: center; 
 }
 
 /* scroll up button */
 .back-up {
-    background-color: greenyellow;
+    position: absolute;
+    background-color: var(--background-three);
     border-radius: 50%;
     text-align: center;
     font-size: x-large;
+    
+    padding-top: 5px;
+    
+    height: 50px;
+    width: 50px;
 
-    height: 40px;
-    width: 40px;
-
-    bottom: 0;
-    right: 0;
+    right: 20px;
 }
 
 /* ###################################################### */
@@ -234,8 +250,8 @@ footer {
 /*                        scene one                       */
 /* ###################################################### */
 .one {
-    grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 0.5fr 0.5fr 0.5fr; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.2fr 0.5fr;
     gap: 2% 2%;
     grid-template-areas:
         "one-title one-title one-title"
@@ -251,22 +267,16 @@ footer {
 .one-text {
     grid-area: one-text;
 
-    background:rgba(255,255,255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
     padding: 3%;
 }
 
 .one img {
-    height: 40%;
+    height: 100%;
     width: 100%;
 }
 
-body {
-    text-align: center;
-    margin: 6em 0 0 0;
-    padding: 0;
-  }
-  
-  .bottom {
+.bottom {
     display: inline-block;
     margin-left: 0.75em;
     width: 3em;
@@ -274,10 +284,10 @@ body {
 
     border: 0.2em solid var(--light-text-color);
     border-radius: 50%;
-    
-  }
-  
-  .bottom:before {
+
+}
+
+.bottom:before {
     display: inline-block;
     content: '';
     margin-top: 0.5em;
@@ -290,14 +300,14 @@ body {
     -moz-transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
-  }
+}
 
 /* ###################################################### */
 /*                        scene two                       */
 /* ###################################################### */
 .two {
     grid-template-columns: repeat(1, 1fr 1fr 1fr);
-    grid-template-rows: 0.2fr 0.5fr 0.5fr; 
+    grid-template-rows: 0.2fr 0.5fr 0.5fr;
     grid-template-areas:
         "two-download two-title two-title"
         "two-text two-text thermometer"
@@ -329,9 +339,12 @@ img.two-download {
     width: auto;
 }
 
-.two a {
+.two a, .six a {
     color: var(--light-text-color);
     text-decoration: none;
+
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 /* Thermometer column and text */
@@ -391,7 +404,7 @@ img.two-download {
     position: absolute;
     background-color: var(--red);
     border-radius: 0 0 10px 10px;
-   
+
 
     height: 0;
     width: 70%;
@@ -429,7 +442,7 @@ img.two-download {
 
 .three-wave {
     position: absolute;
-    background-color: var( --background-three);
+    background-color: var(--background-three);
     --mask:
         radial-gradient(72.11px at 50% 100.00px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
         radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
@@ -439,16 +452,20 @@ img.two-download {
     height: 10%;
     width: 95%;
 
-    bottom: 1.4rem;
+    bottom: 0;
 
     z-index: 1;
 
     transition: height 2s ease-out;
-    transition-delay: -0.2s;
+    transition-delay: -0.4s;
 }
 
 .animation-rise {
-    height: 90%;
+    height: 80%;
+}
+
+.three-wave p {
+    margin-top: 7%;
 }
 
 /* ###################################################### */
@@ -458,23 +475,26 @@ img.two-download {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 0.5fr 0.2fr;
     grid-template-areas:
-        "coral-2 . four-text four-text four-text . coral-4"
-        ". . . . . . ."
+        "coral-2 . four-title four-title four-title . coral-4"
+        ". . four-text-1 . four-text-2 . ."
         "coral-1 coral-1 coral-5 coral-5 coral-5 coral-3 coral-3";
 
-        justify-content: center; 
-        align-content: center; 
-        justify-items: center; 
-        align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
 }
 
-.four-text {
-    grid-area: four-text;
+.four-title {
+    grid-area: four-title;
 }
 
-.four-text {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 4%;
+.four-text-1 {
+    grid-area: four-text-1;
+}
+
+.four-text-2 {
+    grid-area: four-text-2;
 }
 
 .coral-1 {
@@ -628,13 +648,17 @@ img.two-download {
     grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
     grid-template-rows: repeat(2, 0.5fr);
     grid-template-areas:
-        "six-picture six-picture six-picture six-picture "
-        ". six-help six-help .";
+        "six-picture six-picture six-picture six-picture"
+        "six-help six-help six-help six-help";
 }
-
 
 .six-picture {
     grid-area: six-picture;
+}
+
+img.six-picture {
+    height: 400px;
+    width: 100%;
 }
 
 .six-help {
@@ -642,4 +666,68 @@ img.two-download {
 }
 
 
-In Assignment 2 and Assignment 3 you are required to create and use a simple Separation of Concerns. In Assignment 2 and Assignment 3 you are required to use BEM methodology.
+
+
+
+
+
+
+
+
+
+.circle {
+    position: absolute;
+    background-color: white;
+    opacity: 0.2;
+
+    border-radius: 50%;
+
+    z-index: 99;
+}
+
+.circle:nth-of-type(2) {
+    height: 300px;
+    width: 300px;
+
+    right: 0;
+    bottom: -250px;
+}
+
+.circle:nth-of-type(3) {
+    height: 350px;
+    width: 350px;
+
+    left: 0;
+    top: 700px;
+}
+
+.circle:nth-of-type(4) {
+    height: 250px;
+    width: 250px;
+
+    right: 0;
+    bottom: 0;
+
+    background-color: red;
+}
+
+
+.circle:nth-of-type(6) {
+    height: 250px;
+    width: 250px;
+
+    left: 0;
+    bottom: 0;
+
+    background-color: blue;
+}
+
+.circle:nth-of-type(7) {
+    height: 250px;
+    width: 250px;
+
+    right: 0;
+    bottom: 0;
+
+    background-color: magenta;
+}
