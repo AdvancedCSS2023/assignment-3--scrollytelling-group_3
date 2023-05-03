@@ -145,7 +145,7 @@ section {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    
+
     background-size: 70%;
 }
 
@@ -179,17 +179,20 @@ section {
     width: 85%;
 }
 
-h1 {
-    font-size: 2.5em;
+h1,
+h2,
+h3 {
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5em;
 }
 
 h2 {
     font-size: 1.5em;
     margin: 1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 h3 {
@@ -209,8 +212,8 @@ footer {
         ". .";
 
     color: var(--dark-text-color);
-    
-  align-items: center; 
+
+    align-items: center;
 }
 
 /* scroll up button */
@@ -220,9 +223,9 @@ footer {
     border-radius: 50%;
     text-align: center;
     font-size: x-large;
-    
+
     padding-top: 5px;
-    
+
     height: 50px;
     width: 50px;
 
@@ -339,7 +342,8 @@ img.two-download {
     width: auto;
 }
 
-.two a, .six a {
+.two a,
+.six a {
     color: var(--light-text-color);
     text-decoration: none;
 
@@ -405,6 +409,7 @@ img.two-download {
     background-color: var(--red);
     border-radius: 0 0 10px 10px;
 
+    opacity: 0;
 
     height: 0;
     width: 70%;
@@ -466,6 +471,7 @@ img.two-download {
 
 .three-wave p {
     margin-top: 7%;
+    text-align: center;
 }
 
 /* ###################################################### */
@@ -668,11 +674,36 @@ img.six-picture {
 
 
 
+.animation-from-left {
+    opacity: 0;
+    transform: translateX(-300px);
+    transition: all 0.4s ease-out;
+    transition-delay: 0.2s;
+}
 
+.animation-from-right {
+    opacity: 0;
+    transform: translateX(300px);
+    transition: all 0.4s ease-out;
+    transition-delay: 0.2s;
+}
 
+.animation-sides {
+    opacity: 1;
+    transform: translateX(0);
+}
 
+.animation-disappear {
+    opacity: 0;
+    transform: translateX(-1000px);
+    transition: all 1s ease-out;
+    transition-delay: 2s;
+}
 
-
+.animation-opacity {
+    opacity: 1;
+    transform: translateX(0);
+}
 
 
 .circle {
