@@ -1,3 +1,4 @@
+/*Bubble animation*/
 .bubble {
   border-radius: 100%;
   position: absolute;
@@ -97,6 +98,7 @@
   opacity: 0.3;
 }
 
+/*colors*/
 :root {
   --background-color: #F2F2F2;
   --background-one: #9AAC8A;
@@ -110,6 +112,7 @@
   --light-text-color: #F2F2F2;
 }
 
+/*circles*/
 .circle {
   position: absolute;
   background-color: white;
@@ -146,6 +149,7 @@
   bottom: 0;
 }
 
+/*fonts*/
 @font-face {
   font-family: RalewayLight;
   src: url(../assets/fonts/Raleway-Light.ttf);
@@ -158,6 +162,9 @@
   font-family: RalewayThin;
   src: url(../assets/fonts/Raleway-Thin.ttf);
 }
+/* ###################################################### */
+/*                       General Rules                    */
+/* ###################################################### */
 * {
   box-sizing: border-box;
   max-height: 100%;
@@ -365,6 +372,9 @@ footer {
   right: 20px;
 }
 
+/* ###################################################### */
+/*                           Media                        */
+/* ###################################################### */
 @media only screen and (max-width: 800px) {
   html {
     font-size: 3vw;
@@ -402,6 +412,9 @@ footer {
     transition-property: none;
   }
 }
+/* ###################################################### */
+/*                          Scene 1                       */
+/* ###################################################### */
 .one {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.2fr 0.5fr;
@@ -436,6 +449,9 @@ img.arrow-down {
   border-radius: 50%;
 }
 
+/* ###################################################### */
+/*                          Scene 2                       */
+/* ###################################################### */
 .two {
   grid-template-columns: repeat(1, 0.5fr 1fr 0.5fr);
   grid-template-rows: 0.2fr 0.5fr 0.5fr;
@@ -522,6 +538,9 @@ div.two-text > p:first-of-type {
   height: 90%;
 }
 
+/* ###################################################### */
+/*                          Scene 3                       */
+/* ###################################################### */
 .three {
   background-color: var(--background-color);
   grid-template-columns: repeat(1, 1fr 1fr 1fr);
@@ -565,6 +584,9 @@ img.three-picture {
   width: 70%;
 }
 
+/* ###################################################### */
+/*                          Scene 4                       */
+/* ###################################################### */
 .four {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 0.5fr 0.2fr;
@@ -607,6 +629,9 @@ img.three-picture {
   grid-area: coral-5;
 }
 
+/* ###################################################### */
+/*                          Scene 5                       */
+/* ###################################################### */
 .five {
   grid-template-columns: repeat(1, 1fr 1fr 1fr);
   grid-template-rows: 0.4fr 0.4fr;
@@ -630,6 +655,9 @@ a.five-download img {
   font-family: RalewayMedium;
 }
 
+/* ###################################################### */
+/*                          Scene 6                       */
+/* ###################################################### */
 .six {
   grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
   grid-template-rows: repeat(2, 1fr);
