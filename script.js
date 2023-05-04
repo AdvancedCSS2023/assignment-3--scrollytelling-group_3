@@ -1,7 +1,7 @@
-//The code selects all elements with a class of 'mercury' and assigns them to the scrollAnimations variable using the document.querySelectorAll() method.
+//This code selects all HTML elements with the CSS class name 'mercury' and assigns them to the 'scrollAnimations' variable using the method 'document.querySelectorAll()'.
 const scrollAnimations = document.querySelectorAll('.mercury, .three-wave, .animation-from-left, .animation-from-right');
 
-//The code creates an IntersectionObserver and passes it a callback function that is executed when the observed elements intersect with the viewport. The callback function loops through all the entries that intersect with the viewport and adds or removes the class 'animation-mercury' depending on whether the element is intersecting or not.
+//This code uses an IntersectionObserver to trigger a function when an element enters the viewport. It then adds or removes the class 'animation-mercury' to the intersecting elements.
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -18,7 +18,7 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.4
 });
 
-//The observer is set up to watch all the scrollAnimations elements that were selected in step 1. This is done by looping through all the elements in scrollAnimations and calling the observe() method on the IntersectionObserver instance for each element.
+//In step 1, we selected certain elements with the class "scrollAnimations". In step 2, we set up an observer to watch for these elements. The observer loops through each element and calls the observe() method to track when it intersects with the viewport.
 for (let i = 0; i < scrollAnimations.length; i++) {
   const el = scrollAnimations[i];
 
