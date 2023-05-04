@@ -1,788 +1,681 @@
-/* Define variables for colors */
+.bubble {
+  border-radius: 100%;
+  position: absolute;
+  background-color: white;
+  bottom: -20px;
+  opacity: 0.2;
+  animation: bubble 10s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.06;
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 100px;
+  }
+}
+.bubble1 {
+  left: 10%;
+  animation-delay: 0.5s;
+  animation-duration: 46s;
+  opacity: 0.2;
+}
+
+.bubble2 {
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  animation-delay: 1s;
+  animation-duration: 40s;
+  opacity: 0.1;
+}
+
+.bubble3 {
+  width: 10px;
+  height: 10px;
+  left: 30%;
+  animation-delay: 5s;
+  animation-duration: 50s;
+  opacity: 0.3;
+}
+
+.bubble4 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  animation-delay: 10s;
+  animation-duration: 34s;
+  opacity: 0.1;
+}
+
+.bubble5 {
+  width: 10px;
+  height: 10px;
+  left: 80%;
+  animation-delay: 3s;
+  animation-duration: 60s;
+  opacity: 0.4;
+}
+
+.bubble6 {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  bottom: 40px;
+  animation-delay: -5s;
+  animation-duration: 42s;
+  opacity: 0.2;
+}
+
+.bubble7 {
+  width: 40px;
+  height: 40px;
+  left: 30%;
+  bottom: 40px;
+  animation-delay: -21s;
+  animation-duration: 48s;
+  opacity: 0.3;
+}
+
+.bubble8 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  bottom: 40px;
+  animation-delay: -13.75s;
+  animation-duration: 40s;
+  opacity: 0.3;
+}
+
 :root {
-    --background-color: #f5f7f3;
-
-    --background-one: #3F7E44;
-    --background-two: #0C3738;
-    --background-three: #8ED7E6;
-    --background-five: #2F929F;
-    --background-six: #55AB5F;
-
-    --red: #ef402b;
-    --grey: grey;
-
-    --dark-text-color: #08250E;
-    --light-text-color: #f5f7f3;
+  --background-color: #F2F2F2;
+  --background-one: #9AAC8A;
+  --background-two: #49733D;
+  --background-three: #BDD2EA;
+  --background-five: #4F99CC;
+  --background-six: #9AAC8A;
+  --red: #D93B3B;
+  --grey: #939598;
+  --dark-text-color: #08250E;
+  --light-text-color: #F2F2F2;
 }
 
-/* ###################################################### */
-/*                       General Rules                    */
-/* ###################################################### */
-* {
-    box-sizing: border-box;
-
-    max-height: 100%;
-    max-width: 100%;
-
-    /*border: 1px solid red;*/
+.circle {
+  position: absolute;
+  background-color: white;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 99;
 }
-  @font-face {
-    font-family: RalewayLight;
-    src: url(../assets/fonts/Raleway-Light.ttf);
-  }
 
- @font-face {
-    font-family: RalewayMedium;
-    src: url(../assets/fonts/Raleway-Medium.ttf);
-  }
+.circle:nth-of-type(1) {
+  height: 10em;
+  width: 10em;
+  right: 0;
+  bottom: -100px;
+}
+
+.circle:nth-of-type(2) {
+  height: 15em;
+  width: 15em;
+  right: 10px;
+  bottom: -180px;
+}
+
+.circle:nth-of-type(3) {
+  height: 20em;
+  width: 20em;
+  left: 0;
+  top: 700px;
+}
+
+.circle:nth-of-type(4) {
+  height: 15em;
+  width: 15em;
+  right: 0;
+  bottom: 0;
+}
 
 @font-face {
-    font-family: RalewayThin;
-    src: url(../assets/fonts/Raleway-Thin.ttf);
-  }
+  font-family: RalewayLight;
+  src: url(../assets/fonts/Raleway-Light.ttf);
+}
+@font-face {
+  font-family: RalewayMedium;
+  src: url(../assets/fonts/Raleway-Medium.ttf);
+}
+@font-face {
+  font-family: RalewayThin;
+  src: url(../assets/fonts/Raleway-Thin.ttf);
+}
+* {
+  box-sizing: border-box;
+  max-height: 100%;
+  max-width: 100%;
+  /*border: 1px solid red;*/
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 /*helps with overflow on pictures*/
 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    max-height: 100%;
-    max-width: 100%;
-
-    object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 main img {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 body {
-    background: var(--background-color);
-
-    padding: 0;
-    margin: 0;
-
-    font-family: RalewayLight, Helvetica, sans-serif;
-    color: var(--text-color);
-
-    overflow-x: hidden;
-
-    scroll-behavior: smooth;
+  background: var(--background-color);
+  padding: 0;
+  margin: 0;
+  font-family: RalewayLight, Helvetica, sans-serif;
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
 header {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 header ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 header li {
-    display: inline-block;
-    margin-right: 1.2em;
-    list-style-type: none;
+  display: inline-block;
+  margin-right: 1.2em;
+  list-style-type: none;
 }
 
 header a {
-    display: block;
-    padding: 0.5em 1em;
-
-    text-transform: uppercase;
-    line-height: 2em;
-    letter-spacing: 0.03em;
+  display: block;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 0.03em;
 }
 
 header a:link {
-    color: var(--light-text-color);
+  color: var(--background-two);
 }
 
 header a:visited {
-    color: var(--dark-text-color);
+  color: var(--dark-text-color);
 }
 
 header a:hover {
-    color: var(--red);
+  color: var(--red);
 }
 
 header a:active {
-    color: var(--background-three);
+  color: var(--background-five);
 }
 
 header img {
-    float: left;
-
-    margin: 10px 15px 15px 10px;
-
-    width: 50px;
-    height: auto;
+  float: left;
+  margin: 10px 15px 15px 10px;
+  width: 50px;
+  height: auto;
 }
 
 nav {
-    float: right;
+  float: right;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 section {
-    place-items: center;
-    height: 100vh;
-    letter-spacing: 0.3px;
+  place-items: center;
+  height: 100vh;
+  letter-spacing: 0.3px;
 }
 
 .scene,
 .frame {
-    display: grid;
+  display: grid;
 }
 
 .scene {
-    position: relative;
-    text-align: center;
-    color: var(--light-text-color);
-
-    background-size: 70%;
+  position: relative;
+  text-align: center;
+  color: var(--light-text-color);
+  background-size: 70%;
 }
 
 .scene:nth-of-type(1) {
-    background-color: var(--background-one);
+  background-color: var(--background-one);
 }
 
 .scene:nth-of-type(2) {
-    background-color: var(--background-two);
+  background-color: var(--background-two);
 }
 
 .scene:nth-of-type(3) {
-    background-color: var(--background-three);
-    color: var(--dark-text-color);
+  background-color: var(--background-three);
+  color: var(--dark-text-color);
 }
 
 .scene:nth-of-type(4) {
-    background-color: var(--background-five);
+  background-color: var(--background-five);
 }
 
 .scene:nth-of-type(5) {
-    background-color: var(--background-two);
+  background-color: var(--background-two);
 }
 
 .scene:nth-of-type(6) {
-    background-color: var(--background-six);
+  background-color: var(--background-six);
 }
 
 .frame {
-    height: 95%;
-    width: 85%;
+  height: 95%;
+  width: 85%;
+  max-width: 1440px;
 }
 
 h1,
 h2,
 h3 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 h1 {
-    font-size: 2.5em;
-    font-family: RalewayMedium;
+  font-size: 2.5em;
+  font-family: RalewayMedium;
 }
 
 h2 {
-    font-size: 1.5em;
-    margin: 1em;
+  font-size: 1.5em;
+  margin: 1em;
 }
 
 h3 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 p {
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-align: left;
-
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-align: left;
 }
 
-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        ". .";
-
-    color: var(--dark-text-color);
-
-    align-items: center;
+span {
+  background-color: var(--red);
+  padding: 5px;
 }
 
-/* scroll up button */
-.back-up {
-    position: absolute;
-    background-color: var(--background-three);
-    border-radius: 50%;
-    text-align: center;
-    font-size: x-large;
-
-    padding-top: 5px;
-
-    height: 50px;
-    width: 50px;
-
-    right: 20px;
-}
-
-/* ###################################################### */
-/*                        Main elements                   */
-/* ###################################################### */
 .one,
 .two,
 .three,
 .five,
 .six {
-    display: grid;
-    gap: 1% 3%;
-
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  gap: 3% 3%;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
-/* ###################################################### */
-/*                        scene one                       */
-/* ###################################################### */
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ". .";
+  color: var(--dark-text-color);
+  align-items: center;
+}
+
+/* scroll up button */
+.back-up {
+  position: absolute;
+  background-color: var(--background-three);
+  border-radius: 50%;
+  text-align: center;
+  font-size: x-large;
+  padding-top: 5px;
+  height: 50px;
+  width: 50px;
+  right: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 3vw;
+  }
+  .two {
+    grid-template-areas: none;
+  }
+  .thermometer {
+    transform: scale(5);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1c1c1e;
+    --background-one: #212125;
+    --background-two: #2e2e32;
+    --background-three: #3e3e42;
+    --background-five: #4f4f54;
+    --background-six: #7b7b81;
+    --red: #ff453a;
+    --grey: #8e8e93;
+    --dark-text-color: #1c1c1e;
+    --light-text-color: #f2f2f2;
+  }
+}
+@media (prefers-reduced-motion) {
+  .mercury,
+  .three-wave,
+  .animation-from-left,
+  .animation-from-right,
+  .animation-sides {
+    -webkit-transition-property: none;
+    -moz-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
+  }
+}
 .one {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.2fr 0.5fr;
-    gap: 2% 2%;
-    grid-template-areas:
-        "one-title one-title one-title"
-        ". . ."
-        "one-text one-text one-text";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.2fr 0.5fr;
+  gap: 2% 2%;
+  grid-template-areas: "one-title one-title one-title" ". . ." "one-text one-text one-text";
 }
 
 .one-title {
-    grid-area: one-title;
-    padding: 1%;
+  grid-area: one-title;
+  padding: 1%;
 }
 
 .one-text {
-    grid-area: one-text;
+  grid-area: one-text;
 }
 
 div.one-text > p:first-of-type {
-    font-family: RalewayMedium;
+  font-family: RalewayMedium;
 }
 
 .one img {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-.arrow-down {
-    display: inline-block;
-    margin-left: 0.75em;
-    width: 3em;
-    height: 3em;
-
-    border: 0.2em solid var(--light-text-color);
-    border-radius: 50%;
-
+img.arrow-down {
+  display: inline-block;
+  margin-left: 0.75em;
+  width: 3em;
+  height: 3em;
+  border: 0.2em solid var(--light-text-color);
+  border-radius: 50%;
 }
 
-.arrow-down:before {
-    display: inline-block;
-    content: '';
-    margin-top: 0.5em;
-
-    width: 1em;
-    height: 1em;
-
-    border-top: 0.2em solid var(--light-text-color);
-    border-right: 0.2em solid var(--light-text-color);
-    -moz-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-}
-
-/* ###################################################### */
-/*                        scene two                       */
-/* ###################################################### */
 .two {
-    grid-template-columns: repeat(1, 0.5fr 1fr 0.5fr);
-    grid-template-rows: 0.2fr 0.5fr 0.5fr;
-    grid-template-areas:
-        ". two-text thermometer"
-        "two-download two-text thermometer"
-        "two-text-2 two-text-2 two-text-2";
-}
-
-.two-download {
-    grid-area: two-download;
+  grid-template-columns: repeat(1, 0.5fr 1fr 0.5fr);
+  grid-template-rows: 0.2fr 0.5fr 0.5fr;
+  grid-template-areas: "two-text two-text thermometer" "two-text two-text thermometer" "two-text-2 two-text-2 thermometer";
 }
 
 .two-title {
-    grid-area: two-title;
+  grid-area: two-title;
 }
 
 .two-text {
-    grid-area: two-text;
+  grid-area: two-text;
 }
 
 div.two-text > p:first-of-type {
-    font-family: RalewayMedium;
+  font-family: RalewayMedium;
 }
 
 .two-text-2 {
-    grid-area: two-text-2;
+  grid-area: two-text-2;
 }
 
 .thermometer {
-    grid-area: thermometer;
-}
-
-a.two-download img{
-    height: 250px;
-    width: auto;
-}
-
-.two a,
-.six a {
-    color: var(--light-text-color);
-    text-decoration: none;
-
-    text-transform: uppercase;
-    font-weight: bold;
+  grid-area: thermometer;
 }
 
 /* Thermometer column and text */
 .thermometer {
-    position: relative;
-
-    height: 150px;
-    width: 30px;
-
-    right: ;
-    top: -60px;
-
-    border-radius: 22px 22px 0 0;
-    border: 5px solid var(--dark-text-color);
-    border-bottom: none;
-    box-shadow: inset 0 0 0 3px var(--background-two);
-
-    transform: scale(2);
+  position: relative;
+  height: 150px;
+  width: 30px;
+  top: -60px;
+  border-radius: 22px 22px 0 0;
+  border: 5px solid var(--dark-text-color);
+  border-bottom: none;
+  box-shadow: inset 0 0 0 3px var(--background-two);
+  transform: scale(2.5);
 }
 
 /* Thermometer Bulb */
 .thermometer:before {
-    content: " ";
-    position: absolute;
-    background: var(--red);
-    border-radius: 44px;
-    border: 5px solid var(--dark-text-color);
-    box-shadow: inset 0 0 0 3px var(--background-two);
-
-    height: 52px;
-    width: 52px;
-
-    top: 141px;
-    left: -21px;
-
-    z-index: 2;
-    /* Place the bulb under the column */
+  content: " ";
+  position: absolute;
+  background: var(--red);
+  border-radius: 44px;
+  border: 5px solid var(--dark-text-color);
+  box-shadow: inset 0 0 0 3px var(--background-two);
+  height: 52px;
+  width: 52px;
+  top: 141px;
+  left: -21px;
+  z-index: 2;
+  /* Place the bulb under the column */
 }
 
 /* This piece here connects the column with the bulb */
 .thermometer:after {
-    content: " ";
-    position: absolute;
-    background: var(--red);
-
-    height: 15px;
-    width: 20px;
-    box-shadow: inset 0 3px 0 3px var(--background-two);
-
-    top: 135px;
-    left: 0px;
-
-    z-index: 3;
+  content: " ";
+  position: absolute;
+  background: var(--red);
+  height: 15px;
+  width: 20px;
+  box-shadow: inset 0 3px 0 3px var(--background-two);
+  top: 135px;
+  left: 0px;
+  z-index: 3;
 }
 
 .mercury {
-    position: absolute;
-    background-color: var(--red);
-    border-radius: 0 0 10px 10px;
-
-    opacity: 0;
-
-    height: 0;
-    width: 70%;
-
-    left: 3px;
-    bottom: 0;
-
-    z-index: 5;
-
-    transition: height 2s ease-out;
-    transition-delay: 0.2s;
+  position: absolute;
+  background-color: var(--red);
+  border-radius: 0 0 10px 10px;
+  opacity: 0;
+  height: 0;
+  width: 70%;
+  left: 3px;
+  bottom: 0;
+  z-index: 5;
+  transition: height 2s ease-out;
+  transition-delay: 0.2s;
 }
 
 .animation-rise {
-    height: 90%;
+  height: 90%;
 }
 
-/* ###################################################### */
-/*                       scene three                      */
-/* ###################################################### */
 .three {
-    background-color: var(--background-color);
-    grid-template-columns: repeat(1, 1fr 1fr 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas:
-        ". . ."
-        ". three-text ."
-        ". . .";
+  background-color: var(--background-color);
+  grid-template-columns: repeat(1, 1fr 1fr 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: ". . ." ". three-text ." ". . .";
 }
 
 .three-text {
-    grid-area: three-text;
-    z-index: 3;
+  grid-area: three-text;
+  z-index: 3;
 }
 
 .three-wave {
-    position: absolute;
-    background-color: var(--background-three);
-    --mask:
-        radial-gradient(72.11px at 50% 100.00px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
-        radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-
-    height: 10%;
-    width: 95%;
-
-    bottom: 0;
-
-    z-index: 1;
-
-    transition: height 2s ease-out;
-    transition-delay: -0.4s;
+  position: absolute;
+  background-color: var(--background-three);
+  --mask:
+      radial-gradient(72.11px at 50% 100.00px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
+      radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  height: 10%;
+  width: 95%;
+  bottom: 0;
+  z-index: 1;
+  transition: height 2s ease-out;
+  transition-delay: -0.4s;
 }
 
 .animation-rise {
-    height: 80%;
+  height: 80%;
 }
 
 .three-wave p {
-    margin-top: 120px;
-    text-align: center;
+  margin-top: 100px;
+  text-align: center;
+  font-family: RalewayMedium;
 }
 
-/* ###################################################### */
-/*                        scene four                      */
-/* ###################################################### */
-.four {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.5fr 0.2fr;
-    grid-template-areas:
-        "coral-2 . four-title four-title four-title . coral-4"
-        ". . four-text-1 . four-text-2 . ."
-        "coral-1 coral-1 coral-5 coral-5 coral-5 coral-3 coral-3";
+img.three-picture {
+  height: 70%;
+  width: 70%;
+}
 
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
+.four {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 0.2fr;
+  grid-template-areas: "coral-2 . four-title four-title four-title . coral-4" ". . four-text-1 . four-text-2 . ." "coral-1 coral-1 coral-5 coral-5 coral-5 coral-3 coral-3";
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .four-title {
-    grid-area: four-title;
+  grid-area: four-title;
 }
 
 .four-text-1 {
-    grid-area: four-text-1;
+  grid-area: four-text-1;
 }
 
 .four-text-2 {
-    grid-area: four-text-2;
+  grid-area: four-text-2;
 }
 
 .coral-1 {
-    grid-area: coral-1;
+  grid-area: coral-1;
 }
 
 .coral-2 {
-    grid-area: coral-2;
+  grid-area: coral-2;
 }
 
 .coral-3 {
-    grid-area: coral-3;
+  grid-area: coral-3;
 }
 
 .coral-4 {
-    grid-area: coral-4;
+  grid-area: coral-4;
 }
 
 .coral-5 {
-    grid-area: coral-5;
+  grid-area: coral-5;
 }
 
-
-/*styling of the bubbles*/
-
-.bubble {
-    border-radius: 100%;
-    position: absolute;
-    background-color: white;
-    height: 0;
-    opacity: 0.2;
-    animation: bubble 15s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
-  }
-  
-  @keyframes bubble {
-    0% {
-      transform: translateY(0%);
-      opacity: 0.06;
-    }
-  
-    100% {
-      transform: translateY(-50vh);
-    }
-  }
-  
-  @keyframes sideWays {
-    0% {
-      margin-left: 0px;
-    }
-  
-    100% {
-      margin-left: 100px;
-    }
-  }
-  
-  .bubble1 {
-    left: 10%;
-    animation-delay: 0.5s;
-    animation-duration: 46s;
-    opacity: 0.2;
-  }
-  
-  .bubble2 {
-    width: 15px;
-    height: 15px;
-    left: 40%;
-    animation-delay: 1s;
-    animation-duration: 40s;
-    opacity: 0.1;
-  }
-  
-  .bubble3 {
-    width: 10px;
-    height: 10px;
-    left: 30%;
-    animation-delay: 5s;
-    animation-duration: 50s;
-    opacity: 0.3;
-  }
-  
-  .bubble4 {
-    width: 30px;
-    height: 30px;
-    left: 60%;
-    animation-delay: 10s;
-    animation-duration: 34s;
-    opacity: 0.1;
-  }
-  
-  .bubble5 {
-    width: 10px;
-    height: 10px;
-    left: 80%;
-    animation-delay: 3s;
-    animation-duration: 60s;
-    opacity: 0.4;
-  }
-  
-  .bubble6 {
-    width: 20px;
-    height: 20px;
-    left: 50%;
-    bottom: 40px;
-    animation-delay: -5s;
-    animation-duration: 42s;
-    opacity: 0.2;
-  }
-  
-  .bubble7 {
-    width: 40px;
-    height: 40px;
-    left: 30%;
-    bottom: 40px;
-    animation-delay: -21s;
-    animation-duration: 48s;
-    opacity: 0.3;
-  }
-  
-  .bubble8 {
-    width: 30px;
-    height: 30px;
-    left: 60%;
-    bottom: 40px;
-    animation-delay: -13.75s;
-    animation-duration: 40s;
-    opacity: 0.3;
-  }
-
-  
-/* ###################################################### */
-/*                       scene five                       */
-/* ###################################################### */
 .five {
-    grid-template-columns: repeat(1, 1fr 1fr 1fr);
-    grid-template-rows: 0.4fr 0.4fr;
-    grid-template-areas:
-        ". . ."
-        ". five-picture .";
+  grid-template-columns: repeat(1, 1fr 1fr 1fr);
+  grid-template-rows: 0.4fr 0.4fr;
+  grid-template-areas: ". . ." ". five-download .";
 }
 
-.five-picture {
-    grid-area: five-picture;
+.five-download {
+  grid-area: five-download;
 }
 
-/* ###################################################### */
-/*                        scene six                       */
-/* ###################################################### */
+a.five-download img {
+  height: 400px;
+  width: auto;
+}
+
+.five a,
+.six a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: RalewayMedium;
+}
+
 .six {
-    grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-        "six-help six-help six-help six-picture"
-        "six-picture-two six-help-2 six-help-2 six-help-2";
+  grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "six-help six-help six-help six-picture" "six-picture-two six-help-2 six-help-2 six-help-2";
 }
 
 .six-help-2 {
-    grid-area: six-help-2;
+  grid-area: six-help-2;
 }
 
 .six-help {
-    grid-area: six-help;
+  grid-area: six-help;
 }
 
 .six-picture {
-    grid-area: six-picture;
+  grid-area: six-picture;
 }
 
 .six-picture-two {
-    grid-area: six-picture-two;
+  grid-area: six-picture-two;
 }
 
 img.six-picture {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 div.six-help > p:first-of-type {
-    font-family: RalewayMedium;
+  font-family: RalewayMedium;
 }
 
-
-
 .animation-from-left {
-    opacity: 0;
-    transform: translateX(-300px);
-    transition: transform 0.7s ease-out;
-    transition-delay: 0.3s;
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: transform 0.7s ease-out;
+  transition-delay: 0.3s;
 }
 
 .animation-from-right {
-    opacity: 0;
-    transform: translateX(300px);
-    transition: transform 0.7s ease-out;
-    transition-delay: 0.3s;
+  opacity: 0;
+  transform: translateX(200px);
+  transition: transform 0.7s ease-out;
+  transition-delay: 0.3s;
 }
 
 .animation-sides {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/*.animation-disappear {
-    opacity: 0;
-    transform: translateX(0);
-    transition: opacity 1s ease-out;
-    transition-delay: 2s;
-}
-
-.animation-opacity {
-    opacity: 1;
-    transform: translateX(0);
-}*/
-
-  
-  
-
-    
-
-
-
-.circle {
-    position: absolute;
-    background-color: white;
-    opacity: 0.1;
-
-    border-radius: 50%;
-
-    z-index: 99;
-}
-
-.circle:nth-of-type(2) {
-    height: 300px;
-    width: 300px;
-
-    right: 0;
-    bottom: -250px;
-}
-
-.circle:nth-of-type(3) {
-    height: 350px;
-    width: 350px;
-
-    left: 0;
-    top: 700px;
-}
-
-.circle:nth-of-type(4) {
-    height: 250px;
-    width: 250px;
-
-    right: 0;
-    bottom: 0;
-
-    background-color: red;
-}
-
-
-.circle:nth-of-type(6) {
-    height: 250px;
-    width: 250px;
-
-    left: 0;
-    bottom: 0;
-
-    background-color: blue;
-}
-
-.circle:nth-of-type(7) {
-    height: 250px;
-    width: 250px;
-
-    right: 0;
-    bottom: 0;
-
-    background-color: magenta;
-}
+  opacity: 1;
+  transform: translateX(0);
+}/*# sourceMappingURL=index.css.map */

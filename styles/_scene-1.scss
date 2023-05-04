@@ -1,0 +1,37 @@
+.one {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.2fr 0.5fr;
+    gap: 2% 2%;
+    grid-template-areas:
+        "one-title one-title one-title"
+        ". . ."
+        "one-text one-text one-text";
+}
+
+.one-title {
+    grid-area: one-title;
+    padding: 1%;
+}
+
+.one-text {
+    grid-area: one-text;
+}
+
+div.one-text > p:first-of-type {
+    font-family: RalewayMedium;
+}
+
+.one img {
+    height: 100%;
+    width: 100%;
+}
+
+img.arrow-down {
+    display: inline-block;
+    margin-left: 0.75em;
+    width: 3em;
+    height: 3em;
+
+    border: 0.2em solid var(--light-text-color);
+    border-radius: 50%;
+}

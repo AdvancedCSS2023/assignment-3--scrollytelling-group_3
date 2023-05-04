@@ -1,0 +1,44 @@
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 3vw;
+    }
+
+    .two {
+        grid-template-areas: none;
+    }
+
+    .thermometer {
+        transform: scale(5);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1c1c1e;
+
+        --background-one: #212125;
+        --background-two: #2e2e32;
+        --background-three: #3e3e42;
+        --background-five: #4f4f54;
+        --background-six: #7b7b81;
+
+        --red: #ff453a;
+        --grey: #8e8e93;
+
+        --dark-text-color: #1c1c1e;
+        --light-text-color: #f2f2f2;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .mercury,
+    .three-wave,
+    .animation-from-left,
+    .animation-from-right,
+    .animation-sides {
+        -webkit-transition-property: none;
+        -moz-transition-property: none;
+        -o-transition-property: none;
+        transition-property: none;
+    }
+}
