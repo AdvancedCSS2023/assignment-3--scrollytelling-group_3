@@ -35,8 +35,22 @@
     max-height: 100%;
     max-width: 100%;
 
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
+  @font-face {
+    font-family: RalewayLight;
+    src: url(../assets/fonts/Raleway-Light.ttf);
+  }
+
+ @font-face {
+    font-family: RalewayMedium;
+    src: url(../assets/fonts/Raleway-Medium.ttf);
+  }
+
+@font-face {
+    font-family: RalewayThin;
+    src: url(../assets/fonts/Raleway-Thin.ttf);
+  }
 
 /*helps with overflow on pictures*/
 img {
@@ -50,13 +64,17 @@ img {
     object-fit: cover;
 }
 
+main img {
+    border-radius: 20px;
+}
+
 body {
     background: var(--background-color);
 
     padding: 0;
     margin: 0;
 
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: RalewayLight, Helvetica, sans-serif;
     color: var(--text-color);
 
     overflow-x: hidden;
@@ -65,8 +83,6 @@ body {
 }
 
 header {
-
-
     overflow: hidden;
 }
 
@@ -88,8 +104,6 @@ header a {
     text-transform: uppercase;
     line-height: 2em;
     letter-spacing: 0.03em;
-
-    font-weight: bold;
 }
 
 header a:link {
@@ -125,6 +139,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 section {
     place-items: center;
     height: 100vh;
@@ -140,11 +158,6 @@ section {
     position: relative;
     text-align: center;
     color: var(--light-text-color);
-
-    background-image: url();
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
 
     background-size: 70%;
 }
@@ -188,6 +201,7 @@ h3 {
 
 h1 {
     font-size: 2.5em;
+    font-family: RalewayMedium;
 }
 
 h2 {
@@ -200,9 +214,10 @@ h3 {
 }
 
 p {
-    font-size: x-large;
+    font-size: 16px;
     letter-spacing: 1px;
     text-align: left;
+
 }
 
 footer {
@@ -269,9 +284,10 @@ footer {
 
 .one-text {
     grid-area: one-text;
+}
 
-    background: rgba(255, 255, 255, 0.5);
-    padding: 3%;
+div.one-text > p:first-of-type {
+    font-family: RalewayMedium;
 }
 
 .one img {
@@ -279,7 +295,7 @@ footer {
     width: 100%;
 }
 
-.bottom {
+.arrow-down {
     display: inline-block;
     margin-left: 0.75em;
     width: 3em;
@@ -290,7 +306,7 @@ footer {
 
 }
 
-.bottom:before {
+.arrow-down:before {
     display: inline-block;
     content: '';
     margin-top: 0.5em;
@@ -309,12 +325,12 @@ footer {
 /*                        scene two                       */
 /* ###################################################### */
 .two {
-    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+    grid-template-columns: repeat(1, 0.5fr 1fr 0.5fr);
     grid-template-rows: 0.2fr 0.5fr 0.5fr;
     grid-template-areas:
-        "two-download two-title two-title"
-        "two-text two-text thermometer"
-        "two-text-2 two-text-2 thermometer";
+        ". two-text thermometer"
+        "two-download two-text thermometer"
+        "two-text-2 two-text-2 two-text-2";
 }
 
 .two-download {
@@ -329,6 +345,10 @@ footer {
     grid-area: two-text;
 }
 
+div.two-text > p:first-of-type {
+    font-family: RalewayMedium;
+}
+
 .two-text-2 {
     grid-area: two-text-2;
 }
@@ -337,8 +357,8 @@ footer {
     grid-area: thermometer;
 }
 
-img.two-download {
-    height: 300px;
+a.two-download img{
+    height: 250px;
     width: auto;
 }
 
@@ -364,7 +384,7 @@ img.two-download {
     border-radius: 22px 22px 0 0;
     border: 5px solid var(--dark-text-color);
     border-bottom: none;
-    box-shadow: inset 0 0 0 3px #fff;
+    box-shadow: inset 0 0 0 3px var(--background-two);
 
     transform: scale(2);
 }
@@ -376,7 +396,7 @@ img.two-download {
     background: var(--red);
     border-radius: 44px;
     border: 5px solid var(--dark-text-color);
-    box-shadow: inset 0 0 0 3px var(--light-text-color);
+    box-shadow: inset 0 0 0 3px var(--background-two);
 
     height: 52px;
     width: 52px;
@@ -396,7 +416,7 @@ img.two-download {
 
     height: 15px;
     width: 20px;
-    box-shadow: inset 0 3px 0 3px var(--light-text-color);
+    box-shadow: inset 0 3px 0 3px var(--background-two);
 
     top: 135px;
     left: 0px;
@@ -470,7 +490,7 @@ img.two-download {
 }
 
 .three-wave p {
-    margin-top: 7%;
+    margin-top: 120px;
     text-align: center;
 }
 
@@ -640,11 +660,11 @@ img.two-download {
     grid-template-rows: 0.4fr 0.4fr;
     grid-template-areas:
         ". . ."
-        ". six-picture .";
+        ". five-picture .";
 }
 
-.six-picture {
-    grid-area: six-picture;
+.five-picture {
+    grid-area: five-picture;
 }
 
 /* ###################################################### */
@@ -652,40 +672,51 @@ img.two-download {
 /* ###################################################### */
 .six {
     grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
-    grid-template-rows: repeat(2, 0.5fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-        "six-picture six-picture six-picture six-picture"
-        "six-help six-help six-help six-help";
+        "six-help six-help six-help six-picture"
+        "six-picture-two six-help-2 six-help-2 six-help-2";
 }
 
-.six-picture {
-    grid-area: six-picture;
-}
-
-img.six-picture {
-    height: 400px;
-    width: 100%;
+.six-help-2 {
+    grid-area: six-help-2;
 }
 
 .six-help {
     grid-area: six-help;
 }
 
+.six-picture {
+    grid-area: six-picture;
+}
+
+.six-picture-two {
+    grid-area: six-picture-two;
+}
+
+img.six-picture {
+    height: 100%;
+    width: 100%;
+}
+
+div.six-help > p:first-of-type {
+    font-family: RalewayMedium;
+}
 
 
 
 .animation-from-left {
     opacity: 0;
     transform: translateX(-300px);
-    transition: all 0.4s ease-out;
-    transition-delay: 0.2s;
+    transition: all 0.7s ease-out;
+    transition-delay: 0.3s;
 }
 
 .animation-from-right {
     opacity: 0;
     transform: translateX(300px);
-    transition: all 0.4s ease-out;
-    transition-delay: 0.2s;
+    transition: all 0.7s ease-out;
+    transition-delay: 0.3s;
 }
 
 .animation-sides {
@@ -704,6 +735,8 @@ img.six-picture {
     opacity: 1;
     transform: translateX(0);
 }
+
+
 
 
 .circle {
