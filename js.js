@@ -1,5 +1,5 @@
 //The code selects all elements with a class of 'mercury' and assigns them to the scrollAnimations variable using the document.querySelectorAll() method.
-const scrollAnimations = document.querySelectorAll('.mercury, .three-wave, .animation-from-left, .animation-from-right, .animation-disappear');
+const scrollAnimations = document.querySelectorAll('.mercury, .three-wave, .animation-from-left, .animation-from-right');
 
 //The code creates an IntersectionObserver and passes it a callback function that is executed when the observed elements intersect with the viewport. The callback function loops through all the entries that intersect with the viewport and adds or removes the class 'animation-mercury' depending on whether the element is intersecting or not.
 const observer = new IntersectionObserver((entries) => {
@@ -7,11 +7,11 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animation-rise');
       entry.target.classList.add('animation-sides');
-      entry.target.classList.add('animation-opacity');
+
     } else {
       entry.target.classList.remove('animation-rise');
       entry.target.classList.remove('animation-sides');
-      entry.target.classList.remove('animation-opacity');
+
     }
   })
 }, {
