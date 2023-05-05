@@ -19,8 +19,7 @@
 .three-wave {
     position: absolute;
     background-color: var(--background-three);
-    --mask:
-        radial-gradient(72.11px at 50% 100.00px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
+    --mask: radial-gradient(72.11px at 50% 100px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
         radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
     -webkit-mask: var(--mask);
     mask: var(--mask);

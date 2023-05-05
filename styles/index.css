@@ -100,16 +100,16 @@
 
 /*colors*/
 :root {
-  --background-color: #F2F2F2;
-  --background-one: #9AAC8A;
-  --background-two: #49733D;
-  --background-three: #BDD2EA;
-  --background-five: #4F99CC;
-  --background-six: #9AAC8A;
-  --red: #D93B3B;
+  --background-color: #f2f2f2;
+  --background-one: #9aac8a;
+  --background-two: #49733d;
+  --background-three: #bdd2ea;
+  --background-five: #4f99cc;
+  --background-six: #9aac8a;
+  --red: #d93b3b;
   --grey: #939598;
-  --dark-text-color: #08250E;
-  --light-text-color: #F2F2F2;
+  --dark-text-color: #08250e;
+  --light-text-color: #f2f2f2;
 }
 
 /*circles*/
@@ -263,6 +263,47 @@ section {
   letter-spacing: 0.3px;
 }
 
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-family: RalewayMedium;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+span {
+  background-color: var(--red);
+  padding: 5px;
+}
+
+footer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ". .";
+  color: var(--dark-text-color);
+  align-items: center;
+}
+
 .scene,
 .frame {
   display: grid;
@@ -306,38 +347,6 @@ section {
   max-width: 1440px;
 }
 
-h1,
-h2,
-h3 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-h1 {
-  font-size: 2.5em;
-  font-family: RalewayMedium;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin: 1em;
-}
-
-h3 {
-  font-size: 2em;
-}
-
-p {
-  font-size: 1em;
-  letter-spacing: 1px;
-  text-align: left;
-}
-
-span {
-  background-color: var(--red);
-  padding: 5px;
-}
-
 .one,
 .two,
 .three,
@@ -351,25 +360,15 @@ span {
   align-items: center;
 }
 
-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: ". .";
-  color: var(--dark-text-color);
-  align-items: center;
-}
-
 /* scroll up button */
 .back-up {
   position: absolute;
   background-color: var(--background-three);
   border-radius: 50%;
-  text-align: center;
-  font-size: x-large;
-  padding-top: 5px;
   height: 50px;
   width: 50px;
   right: 20px;
+  bottom: 20px;
 }
 
 /* ###################################################### */
@@ -405,7 +404,8 @@ footer {
   .three-wave,
   .animation-from-left,
   .animation-from-right,
-  .animation-sides {
+  .animation-sides,
+  .arrow-down {
     -webkit-transition-property: none;
     -moz-transition-property: none;
     -o-transition-property: none;
@@ -449,6 +449,21 @@ img.arrow-down {
   border-radius: 50%;
 }
 
+.bounce {
+  animation: bounce 1.2s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /* ###################################################### */
 /*                          Scene 2                       */
 /* ###################################################### */
@@ -556,8 +571,7 @@ div.two-text > p:first-of-type {
 .three-wave {
   position: absolute;
   background-color: var(--background-three);
-  --mask:
-      radial-gradient(72.11px at 50% 100.00px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
+  --mask: radial-gradient(72.11px at 50% 100px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
       radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
@@ -589,7 +603,7 @@ img.three-picture {
 /* ###################################################### */
 .four {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 0.5fr 0.2fr;
+  grid-template-rows: 0.7fr 0.5fr 0.5fr;
   grid-template-areas: "coral-2 . four-title four-title four-title . coral-4" ". . four-text-1 . four-text-2 . ." "coral-1 coral-1 coral-5 coral-5 coral-5 coral-3 coral-3";
   justify-content: center;
   align-content: center;
@@ -643,7 +657,7 @@ img.three-picture {
 }
 
 a.five-download img {
-  height: 400px;
+  height: 18.75em;
   width: auto;
 }
 
@@ -681,8 +695,8 @@ a.five-download img {
 }
 
 img.six-picture {
-  height: 100%;
-  width: 100%;
+  height: 25em;
+  width: auto;
 }
 
 div.six-help > p:first-of-type {

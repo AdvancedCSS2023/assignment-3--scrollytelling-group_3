@@ -4,7 +4,7 @@
 
 .four {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.5fr 0.2fr;
+    grid-template-rows: 0.7fr 0.5fr 0.5fr;
     grid-template-areas:
         "coral-2 . four-title four-title four-title . coral-4"
         ". . four-text-1 . four-text-2 . ."
