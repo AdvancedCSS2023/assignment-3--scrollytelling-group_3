@@ -17,17 +17,14 @@
   font-family: RalewayLight;
   src: url(../assets/fonts/Raleway-Light.ttf);
 }
-
 @font-face {
   font-family: RalewayMedium;
   src: url(../assets/fonts/Raleway-Medium.ttf);
 }
-
 @font-face {
   font-family: RalewayThin;
   src: url(../assets/fonts/Raleway-Thin.ttf);
 }
-
 /* ###################################################### */
 /*                       General Rules                    */
 /* ###################################################### */
@@ -256,7 +253,7 @@ footer p {
 
 .between-sections h2 {
   margin: auto;
-  font-size: 1.2em;
+  font-size: 2em;
 }
 
 /*one*/
@@ -279,16 +276,13 @@ img.arrow-down {
   0% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-7px);
   }
-
   100% {
     transform: translateY(0);
   }
 }
-
 /*fixed background*/
 .fixed-background {
   background-repeat: no-repeat;
@@ -337,7 +331,7 @@ img.arrow-down {
   grid-area: one-text;
 }
 
-div.one-text>p:first-of-type {
+div.one-text > p:first-of-type {
   font-family: RalewayMedium;
 }
 
@@ -450,7 +444,7 @@ div.one-text>p:first-of-type {
   position: absolute;
   background-color: var(--background-three);
   --mask: radial-gradient(72.11px at 50% 100px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
-    radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
+      radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
   height: 10%;
@@ -578,7 +572,7 @@ img.six-picture-two {
   width: 100%;
 }
 
-div.six-help>p:first-of-type {
+div.six-help > p:first-of-type {
   font-family: RalewayMedium;
 }
 
@@ -612,28 +606,23 @@ a.animation-from-left {
   html {
     font-size: clamp(13px, 1vw, 18px);
   }
-
   .scene:nth-of-type(4) {
     height: auto;
   }
-
   .scene:nth-of-type(1) {
     height: auto;
     padding-bottom: 20px;
   }
 }
-
 @media only screen and (max-width: 800px) {
   html {
     font-size: clamp(10px, 3vw, 15px);
     overflow-x: hidden;
   }
-
   .scene:not(:nth-of-type(3)):not(:nth-of-type(4)) {
     padding: 50px 0px;
     height: auto;
   }
-
   .frame.one,
   .frame.two,
   .frame.three,
@@ -642,118 +631,94 @@ a.animation-from-left {
     grid-template-columns: 1fr;
     grid-template-areas: none;
   }
-
   .frame.one {
     grid-template-rows: 1fr 1fr 1fr;
     height: auto;
   }
-
   .one-title,
   .one-text {
     grid-area: auto;
   }
-
-  .one>img {
+  .one > img {
     max-height: 280px;
     min-height: 280px;
   }
-
   .frame.two {
     grid-template-rows: 1fr 1.3fr 0.6fr;
     height: auto;
   }
-
   .two-text {
     grid-area: auto;
     grid-row: 1/2;
   }
-
   .thermometer {
     grid-area: auto;
     grid-row: 2/3;
     top: -40px;
     transform: scale(1);
   }
-
   .two-text-2 {
     grid-area: auto;
     grid-row: 3/4;
   }
-
   .frame.three {
     grid-template-rows: repeat(3, 1fr);
   }
-
   .three-text {
     grid-area: auto;
     grid-row: 2/3;
   }
-
   .frame.five {
     height: auto;
     grid-template-rows: repeat(6, 0.5fr) 0.2fr;
     gap: 0;
   }
-
   .five div:nth-of-type(5) {
     grid-row: 5/6;
   }
-
   .five-download {
     grid-area: auto;
   }
-
   .frame.six {
     height: auto;
     grid-template-rows: 0.3fr 1fr 380px 0.4fr;
     gap: 20px 0px;
   }
-
   .six img {
     min-width: 100%;
   }
-
   .six-picture {
     grid-area: auto;
     grid-row: 2/3;
   }
-
   .six-help {
     grid-area: auto;
   }
-
   img.six-picture-two {
     height: 100%;
     grid-area: auto;
   }
-
   .six-help-2 {
     grid-area: auto;
   }
-
   header a {
     font-size: 1.2em;
   }
-
   h1 {
     font-size: 2.5em;
   }
-
   h3 {
     font-size: 1.5em;
   }
-
   p {
     font-size: 1.2em;
   }
-
   .one-title h1 span {
     margin: auto;
     width: max-content;
     display: block;
   }
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #242424;
@@ -767,14 +732,11 @@ a.animation-from-left {
     --dark-text-color: #f2f2f2;
     --light-text-color: #f2f2f2;
   }
-
   img.arrow-down {
     filter: grayscale(0%) invert(0%);
   }
 }
-
 @media (prefers-reduced-motion) {
-
   .mercury,
   .three-wave,
   .animation-from-left,
@@ -788,7 +750,6 @@ a.animation-from-left {
     transition-property: none;
   }
 }
-
 /*circles*/
 .circle {
   position: absolute;
@@ -841,22 +802,18 @@ a.animation-from-left {
     transform: translateY(0%);
     opacity: 0.06;
   }
-
   100% {
     transform: translateY(-100vh);
   }
 }
-
 @keyframes sideWays {
   0% {
     margin-left: 0px;
   }
-
   100% {
     margin-left: 100px;
   }
 }
-
 .bubble1 {
   left: 10%;
   animation-delay: 0.5s;
@@ -928,6 +885,4 @@ a.animation-from-left {
   animation-delay: -13.75s;
   animation-duration: 40s;
   opacity: 0.3;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
