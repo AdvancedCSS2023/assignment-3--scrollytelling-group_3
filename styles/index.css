@@ -229,8 +229,6 @@ footer {
   position: absolute;
   background-color: var(--background-three);
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
   right: 20px;
   bottom: 20px;
 }
@@ -560,8 +558,8 @@ a.five-download img {
 
 img.six-picture,
 img.six-picture-two {
-  height: 15em;
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 div.six-help > p:first-of-type {
