@@ -4,15 +4,55 @@
 
 @media only screen and (max-width: 800px) {
     html {
-        font-size: 3vw;
+        font-size: 2vw;
+    }
+
+    .two, .five {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
 
     .two {
-        grid-template-areas: none;
+        grid-template-areas:
+            "two-text"
+            "thermometer"
+            "two-text-2";
     }
 
     .thermometer {
-        transform: scale(5);
+        transform: scale(1);
+    }
+
+    .five {
+        grid-template-areas:
+            "."
+            "."
+            "."
+            "."
+            "."
+            "five-download";
+    }
+
+    a.five-download img {
+        height: 9em;
+        width: auto;
+    }
+
+    .six {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.8fr 0.4fr 0.2fr;
+    }
+    .six {
+        grid-template-areas:
+            "six-help six-help"
+            "six-picture six-picture-two"
+            "six-help-2 six-help-2";
+    }
+
+    img.six-picture,
+    img.six-picture-two {
+        height: 100%;
+        width: 90%;
     }
 }
 
