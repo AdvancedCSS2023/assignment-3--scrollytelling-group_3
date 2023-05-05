@@ -39,15 +39,16 @@ The project is maintained and contributed by Eva, who is the sole developer and 
 
 ### [Contact me](https://github.com/evafha)
 
+**Extra
 [^1]: More detailed instructions.
-1. First, you will need to create a GitHub account if you don't already have one. Go to [GitHub](github.com) and follow the prompts to create an account.
-2. Once you have a GitHub account, go to the project repository you want to fork. In this case, it's the "United Nations Goal 13: Climate Action" project.
-3. On the repository page, click the "Fork" button in the top right corner of the page. This will create a copy of the repository on your own GitHub account.
-4. After forking the repository, you can clone it to your local machine using Git. To do this, you will need to have Git installed on your computer. If you don't have Git installed, you can download it from the official website: git-scm.com/downloads.
-5. Open your terminal or command prompt and navigate to the directory where you want to store the project. Then enter the following command:
-`git clone https://github.com/YOUR_USERNAME/climate-action.git`
-Replace "YOUR_USERNAME" with your actual GitHub username.
-6. After cloning the repository, you can open it in your preferred text editor. Visual Studio Code is a popular choice and can be downloaded from the official website: [VisualStudioCode](code.visualstudio.com/download)
-7. Once you have the project open in your text editor, you can start exploring the code and making changes. To view the project in your web browser, simply open the `index.html` file.
+    1. First, you will need to create a GitHub account if you don't already have one. Go to [GitHub](github.com) and follow the prompts to create an account.
+    2. Once you have a GitHub account, go to the project repository you want to fork. In this case, it's the "United Nations Goal 13: Climate Action" project.
+    3. On the repository page, click the "Fork" button in the top right corner of the page. This will create a copy of the repository on your own GitHub account.
+    4. After forking the repository, you can clone it to your local machine using Git. To do this, you will need to have Git installed on your computer. If you don't have Git installed, you can download it from the official website: git-scm.com/downloads.
+    5. Open your terminal or command prompt and navigate to the directory where you want to store the project. Then enter the following command:
+    `git clone https://github.com/YOUR_USERNAME/climate-action.git`
+    Replace "YOUR_USERNAME" with your actual GitHub username.
+    6. After cloning the repository, you can open it in your preferred text editor. Visual Studio Code is a popular choice and can be downloaded from the official website: [VisualStudioCode](code.visualstudio.com/download)
+    7. Once you have the project open in your text editor, you can start exploring the code and making changes. To view the project in your web browser, simply open the `index.html` file.
 
-That's it! You're now ready to start working with the "United Nations Goal 13: Climate Action" project.
+    That's it! You're now ready to start working with the "United Nations Goal 13: Climate Action" project.
