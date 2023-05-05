@@ -29,29 +29,3 @@ div.one-text > p:first-of-type {
     height: 100%;
     width: 100%;
 }
-
-img.arrow-down {
-    display: inline-block;
-    margin-left: 0.75em;
-    width: 3em;
-    height: 3em;
-
-    border: 0.2em solid var(--light-text-color);
-    border-radius: 50%;
-}
-
-.bounce {
-    animation: bounce 1.2s linear infinite;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-7px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}

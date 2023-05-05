@@ -1,103 +1,3 @@
-/*Bubble animation*/
-.bubble {
-  border-radius: 100%;
-  position: absolute;
-  background-color: white;
-  bottom: -20px;
-  opacity: 0.2;
-  animation: bubble 10s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
-}
-
-@keyframes bubble {
-  0% {
-    transform: translateY(0%);
-    opacity: 0.06;
-  }
-  100% {
-    transform: translateY(-100vh);
-  }
-}
-@keyframes sideWays {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: 100px;
-  }
-}
-.bubble1 {
-  left: 10%;
-  animation-delay: 0.5s;
-  animation-duration: 46s;
-  opacity: 0.2;
-}
-
-.bubble2 {
-  width: 15px;
-  height: 15px;
-  left: 40%;
-  animation-delay: 1s;
-  animation-duration: 40s;
-  opacity: 0.1;
-}
-
-.bubble3 {
-  width: 10px;
-  height: 10px;
-  left: 30%;
-  animation-delay: 5s;
-  animation-duration: 50s;
-  opacity: 0.3;
-}
-
-.bubble4 {
-  width: 30px;
-  height: 30px;
-  left: 60%;
-  animation-delay: 10s;
-  animation-duration: 34s;
-  opacity: 0.1;
-}
-
-.bubble5 {
-  width: 10px;
-  height: 10px;
-  left: 80%;
-  animation-delay: 3s;
-  animation-duration: 60s;
-  opacity: 0.4;
-}
-
-.bubble6 {
-  width: 20px;
-  height: 20px;
-  left: 50%;
-  bottom: 40px;
-  animation-delay: -5s;
-  animation-duration: 42s;
-  opacity: 0.2;
-}
-
-.bubble7 {
-  width: 40px;
-  height: 40px;
-  left: 30%;
-  bottom: 40px;
-  animation-delay: -21s;
-  animation-duration: 48s;
-  opacity: 0.3;
-}
-
-.bubble8 {
-  width: 30px;
-  height: 30px;
-  left: 60%;
-  bottom: 40px;
-  animation-delay: -13.75s;
-  animation-duration: 40s;
-  opacity: 0.3;
-}
-
 /*colors*/
 :root {
   --background-color: #f2f2f2;
@@ -110,43 +10,6 @@
   --grey: #939598;
   --dark-text-color: #08250e;
   --light-text-color: #f2f2f2;
-}
-
-/*circles*/
-.circle {
-  position: absolute;
-  background-color: white;
-  opacity: 0.1;
-  border-radius: 50%;
-  z-index: 99;
-}
-
-.circle:nth-of-type(1) {
-  height: 10em;
-  width: 10em;
-  right: 0;
-  bottom: -100px;
-}
-
-.circle:nth-of-type(2) {
-  height: 15em;
-  width: 15em;
-  right: 10px;
-  bottom: -180px;
-}
-
-.circle:nth-of-type(3) {
-  height: 20em;
-  width: 20em;
-  left: 0;
-  top: 700px;
-}
-
-.circle:nth-of-type(4) {
-  height: 15em;
-  width: 15em;
-  right: 0;
-  bottom: 0;
 }
 
 /*fonts*/
@@ -367,18 +230,6 @@ footer p {
   align-items: center;
 }
 
-.between-sections {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-}
-
-.between-sections h2 {
-  font-size: 1.2em;
-}
-
 /* scroll up button */
 .back-up {
   position: absolute;
@@ -386,6 +237,71 @@ footer p {
   border-radius: 50%;
   right: 20px;
   bottom: 20px;
+}
+
+.between-sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.between-sections h2 {
+  margin: auto;
+  font-size: 1.2em;
+}
+
+/*one*/
+img.arrow-down {
+  display: inline-block;
+  margin-left: 0.75em;
+  width: 3em;
+  height: 3em;
+  border: 0.2em solid var(--light-text-color);
+  border-radius: 50%;
+  filter: grayscale(100%) invert(100%);
+  margin: auto;
+}
+
+.bounce {
+  animation: bounce 1.2s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*fixed background*/
+.fixed-background {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+}
+
+.fixed-one {
+  background-image: url("../assets/images/drought.jpg");
+  /*<a href="https://www.freepik.com/free-photo/elderly-man-sitting-touch-with-rain-dry-season-global-warming-selection-focus_5469296.htm#query=water%20eco%20drought&position=28&from_view=search&track=ais">Image by jcomp</a> on Freepik*/
+}
+
+.fixed-two {
+  background-image: url("../assets/images/owerflow.jpg");
+  /*<a href="https://www.freepik.com/free-photo/elderly-man-sitting-touch-with-rain-dry-season-global-warming-selection-focus_5469296.htm#query=water%20eco%20drought&position=28&from_view=search&track=ais">Image by jcomp</a> on Freepik*/
+}
+
+.fixed-three {
+  background-image: url("../assets/images/coral-reef.jpg");
+  /*<a href="https://www.freepik.com/free-photo/coral-reef_28944298.htm#query=coral%20reefs&position=39&from_view=search&track=ais">Image by kamchatka</a> on Freepik*/
 }
 
 /* ###################################################### */
@@ -416,30 +332,6 @@ div.one-text > p:first-of-type {
   width: 100%;
 }
 
-img.arrow-down {
-  display: inline-block;
-  margin-left: 0.75em;
-  width: 3em;
-  height: 3em;
-  border: 0.2em solid var(--light-text-color);
-  border-radius: 50%;
-}
-
-.bounce {
-  animation: bounce 1.2s linear infinite;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-7px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 /* ###################################################### */
 /*                          Scene 2                       */
 /* ###################################################### */
@@ -455,10 +347,6 @@ img.arrow-down {
 
 .two-text {
   grid-area: two-text;
-}
-
-div.two-text > p:first-of-type {
-  font-family: RalewayMedium;
 }
 
 .two-text-2 {
@@ -832,6 +720,9 @@ div.six-help > p:first-of-type {
     --dark-text-color: #f2f2f2;
     --light-text-color: #f2f2f2;
   }
+  img.arrow-down {
+    filter: grayscale(0%) invert(0%);
+  }
 }
 @media (prefers-reduced-motion) {
   .mercury,
@@ -846,4 +737,140 @@ div.six-help > p:first-of-type {
     -o-transition-property: none;
     transition-property: none;
   }
+}
+/*circles*/
+.circle {
+  position: absolute;
+  background-color: white;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.circle:nth-of-type(1) {
+  height: 10em;
+  width: 10em;
+  right: 0;
+  bottom: -100px;
+}
+
+.circle:nth-of-type(2) {
+  height: 15em;
+  width: 15em;
+  right: 10px;
+  bottom: -180px;
+}
+
+.circle:nth-of-type(3) {
+  height: 20em;
+  width: 20em;
+  left: 0;
+  top: 700px;
+}
+
+.circle:nth-of-type(4) {
+  height: 15em;
+  width: 15em;
+  right: 0;
+  bottom: 0;
+}
+
+/*Bubble animation*/
+.bubble {
+  border-radius: 100%;
+  position: absolute;
+  background-color: white;
+  bottom: -20px;
+  opacity: 0.2;
+  animation: bubble 10s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.06;
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 100px;
+  }
+}
+.bubble1 {
+  left: 10%;
+  animation-delay: 0.5s;
+  animation-duration: 46s;
+  opacity: 0.2;
+}
+
+.bubble2 {
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  animation-delay: 1s;
+  animation-duration: 40s;
+  opacity: 0.1;
+}
+
+.bubble3 {
+  width: 10px;
+  height: 10px;
+  left: 30%;
+  animation-delay: 5s;
+  animation-duration: 50s;
+  opacity: 0.3;
+}
+
+.bubble4 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  animation-delay: 10s;
+  animation-duration: 34s;
+  opacity: 0.1;
+}
+
+.bubble5 {
+  width: 10px;
+  height: 10px;
+  left: 80%;
+  animation-delay: 3s;
+  animation-duration: 60s;
+  opacity: 0.4;
+}
+
+.bubble6 {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  bottom: 40px;
+  animation-delay: -5s;
+  animation-duration: 42s;
+  opacity: 0.2;
+}
+
+.bubble7 {
+  width: 40px;
+  height: 40px;
+  left: 30%;
+  bottom: 40px;
+  animation-delay: -21s;
+  animation-duration: 48s;
+  opacity: 0.3;
+}
+
+.bubble8 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  bottom: 40px;
+  animation-delay: -13.75s;
+  animation-duration: 40s;
+  opacity: 0.3;
 }/*# sourceMappingURL=index.css.map */
