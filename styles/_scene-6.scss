@@ -4,7 +4,7 @@
 
 .six {
     grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 0.5fr;
     grid-template-areas:
         "six-help six-help six-help six-picture"
         "six-picture-two six-help-2 six-help-2 six-help-2";
@@ -28,8 +28,8 @@
 
 img.six-picture,
 img.six-picture-two {
-    height: 15em;
-    width: auto;
+    height: 70%;
+    width: 100%;
 }
 
 div.six-help > p:first-of-type {
