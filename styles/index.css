@@ -1,3 +1,103 @@
+/*Bubble animation*/
+.bubble {
+  border-radius: 100%;
+  position: absolute;
+  background-color: white;
+  bottom: -20px;
+  opacity: 0.2;
+  animation: bubble 10s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.06;
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 100px;
+  }
+}
+.bubble1 {
+  left: 10%;
+  animation-delay: 0.5s;
+  animation-duration: 46s;
+  opacity: 0.2;
+}
+
+.bubble2 {
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  animation-delay: 1s;
+  animation-duration: 40s;
+  opacity: 0.1;
+}
+
+.bubble3 {
+  width: 10px;
+  height: 10px;
+  left: 30%;
+  animation-delay: 5s;
+  animation-duration: 50s;
+  opacity: 0.3;
+}
+
+.bubble4 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  animation-delay: 10s;
+  animation-duration: 34s;
+  opacity: 0.1;
+}
+
+.bubble5 {
+  width: 10px;
+  height: 10px;
+  left: 80%;
+  animation-delay: 3s;
+  animation-duration: 60s;
+  opacity: 0.4;
+}
+
+.bubble6 {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  bottom: 40px;
+  animation-delay: -5s;
+  animation-duration: 42s;
+  opacity: 0.2;
+}
+
+.bubble7 {
+  width: 40px;
+  height: 40px;
+  left: 30%;
+  bottom: 40px;
+  animation-delay: -21s;
+  animation-duration: 48s;
+  opacity: 0.3;
+}
+
+.bubble8 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  bottom: 40px;
+  animation-delay: -13.75s;
+  animation-duration: 40s;
+  opacity: 0.3;
+}
+
 /*colors*/
 :root {
   --background-color: #f2f2f2;
@@ -10,6 +110,43 @@
   --grey: #939598;
   --dark-text-color: #08250e;
   --light-text-color: #f2f2f2;
+}
+
+/*circles*/
+.circle {
+  position: absolute;
+  background-color: white;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.circle:nth-of-type(1) {
+  height: 10em;
+  width: 10em;
+  right: 0;
+  bottom: -100px;
+}
+
+.circle:nth-of-type(2) {
+  height: 15em;
+  width: 15em;
+  right: 10px;
+  bottom: -180px;
+}
+
+.circle:nth-of-type(3) {
+  height: 20em;
+  width: 20em;
+  left: 0;
+  top: 700px;
+}
+
+.circle:nth-of-type(4) {
+  height: 15em;
+  width: 15em;
+  right: 0;
+  bottom: 0;
 }
 
 /*fonts*/
@@ -229,51 +366,12 @@ footer {
   position: absolute;
   background-color: var(--background-three);
   border-radius: 50%;
+  height: 50px;
+  width: 50px;
   right: 20px;
   bottom: 20px;
 }
 
-/* ###################################################### */
-/*                           Media                        */
-/* ###################################################### */
-@media only screen and (max-width: 800px) {
-  html {
-    font-size: 3vw;
-  }
-  .two {
-    grid-template-areas: none;
-  }
-  .thermometer {
-    transform: scale(5);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #1c1c1e;
-    --background-one: #212125;
-    --background-two: #2e2e32;
-    --background-three: #3e3e42;
-    --background-five: #4f4f54;
-    --background-six: #7b7b81;
-    --red: #ff453a;
-    --grey: #8e8e93;
-    --dark-text-color: #1c1c1e;
-    --light-text-color: #f2f2f2;
-  }
-}
-@media (prefers-reduced-motion) {
-  .mercury,
-  .three-wave,
-  .animation-from-left,
-  .animation-from-right,
-  .animation-sides,
-  .arrow-down {
-    -webkit-transition-property: none;
-    -moz-transition-property: none;
-    -o-transition-property: none;
-    transition-property: none;
-  }
-}
 /* ###################################################### */
 /*                          Scene 1                       */
 /* ###################################################### */
@@ -365,7 +463,7 @@ div.two-text > p:first-of-type {
   border: 5px solid var(--dark-text-color);
   border-bottom: none;
   box-shadow: inset 0 0 0 3px var(--background-two);
-  transform: scale(2);
+  transform: scale(2.5);
 }
 
 /* Thermometer Bulb */
@@ -558,8 +656,8 @@ a.five-download img {
 
 img.six-picture,
 img.six-picture-two {
-  height: 100%;
-  width: 100%;
+  height: 15em;
+  width: auto;
 }
 
 div.six-help > p:first-of-type {
@@ -568,14 +666,14 @@ div.six-help > p:first-of-type {
 
 .animation-from-left {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-200px);
   transition: transform 0.7s ease-out;
   transition-delay: 0.3s;
 }
 
 .animation-from-right {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(200px);
   transition: transform 0.7s ease-out;
   transition-delay: 0.3s;
 }
@@ -585,139 +683,177 @@ div.six-help > p:first-of-type {
   transform: translateX(0);
 }
 
-/*Bubble animation*/
-.bubble {
-  border-radius: 100%;
-  position: absolute;
-  background-color: white;
-  bottom: -20px;
-  opacity: 0.2;
-  animation: bubble 10s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
-}
+/* ###################################################### */
+/*                           Media                        */
+/* ###################################################### */
 
-@keyframes bubble {
-  0% {
-    transform: translateY(0%);
-    opacity: 0.06;
+@media only screen and (min-width:801px){
+  html{
+    font-size: clamp(13px, 1vw, 18px);
   }
-  100% {
-    transform: translateY(-100vh);
+  .scene:nth-of-type(4){
+    height: auto;
+  }
+  
+  .scene:nth-of-type(1){
+    height: auto;
+    padding-bottom: 20px;
+  }
+  p{
+      font-size:1.5em;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: clamp(10px,3vw,15px);
+    overflow-x: hidden;
+  }
+
+  .scene:not(:nth-of-type(3)):not(:nth-of-type(4)) {
+    padding: 50px 0px;
+    height: auto;
+  }
+
+  .frame.one,
+  .frame.two,
+  .frame.three,
+  .frame.five,
+  .frame.six{
+    grid-template-columns: 1fr;
+    grid-template-areas:none;
+  }
+
+  .frame.one {
+    grid-template-rows: 1fr 1fr 1fr;
+    height: auto;
+  }
+
+  .one-title,.one-text{
+    grid-area: auto;
+  }
+
+    .one > img {
+        max-height: 280px;
+        min-height: 280px;
+    }
+  .frame.two {
+    grid-template-rows: 1fr 1.3fr 0.6fr;
+    height: auto;
+  }
+
+  .two-text {
+      grid-area: auto;
+      grid-row: 1/2;
+  }
+
+  .thermometer {
+      grid-area: auto;
+      grid-row: 2/3;
+      top: -40px;
+      transform: scale(2);
+  }
+
+  .two-text-2 {
+      grid-area: auto;
+      grid-row: 3/4;
+  }
+
+  .frame.three {
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .three-text {
+      grid-area: auto;
+      grid-row: 2/3;
+  }
+  .frame.five {
+    height: auto;
+    grid-template-rows: repeat(6,0.5fr) 0.2fr;
+    gap: 0;
+  }
+
+  .five div:nth-of-type(5) {
+      grid-row: 5/6;
+  }
+
+  .five-download {
+      grid-area: auto;
+  }
+
+  .frame.six {
+    height: auto;
+    grid-template-rows: 0.3fr 1fr 380px 0.4fr;
+    gap: 20px 0px;
+  }
+  
+  .six img {
+    min-width: 100%;
+  }
+
+  .six-picture {
+      grid-area: auto;
+      grid-row: 2/3;
+  }
+
+  .six-help {
+      grid-area: auto;
+  }
+
+  img.six-picture-two {
+      height: 100%;
+      grid-area: auto;
+  }
+
+  .six-help-2 {
+      grid-area: auto;
+  }
+
+  header a {
+      font-size: 1.2em;
+  }
+
+  h1 {
+      font-size: 2.5em;
+  }
+  h3 {
+      font-size: 1.5em;
+  }
+  p{
+    font-size: 1.2em;
+  }
+
+  .one-title h1 span {
+      margin: auto;
+      width: max-content;
+      display: block;
   }
 }
-@keyframes sideWays {
-  0% {
-    margin-left: 0px;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1c1c1e;
+    --background-one: #212125;
+    --background-two: #2e2e32;
+    --background-three: #3e3e42;
+    --background-five: #4f4f54;
+    --background-six: #7b7b81;
+    --red: #ff453a;
+    --grey: #8e8e93;
+    --dark-text-color: #1c1c1e;
+    --light-text-color: #f2f2f2;
   }
-  100% {
-    margin-left: 100px;
+}
+@media (prefers-reduced-motion) {
+  .mercury,
+  .three-wave,
+  .animation-from-left,
+  .animation-from-right,
+  .animation-sides,
+  .arrow-down {
+    -webkit-transition-property: none;
+    -moz-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
   }
-}
-.bubble1 {
-  left: 10%;
-  animation-delay: 0.5s;
-  animation-duration: 46s;
-  opacity: 0.2;
-}
-
-.bubble2 {
-  width: 15px;
-  height: 15px;
-  left: 40%;
-  animation-delay: 1s;
-  animation-duration: 40s;
-  opacity: 0.1;
-}
-
-.bubble3 {
-  width: 10px;
-  height: 10px;
-  left: 30%;
-  animation-delay: 5s;
-  animation-duration: 50s;
-  opacity: 0.3;
-}
-
-.bubble4 {
-  width: 30px;
-  height: 30px;
-  left: 60%;
-  animation-delay: 10s;
-  animation-duration: 34s;
-  opacity: 0.1;
-}
-
-.bubble5 {
-  width: 10px;
-  height: 10px;
-  left: 80%;
-  animation-delay: 3s;
-  animation-duration: 60s;
-  opacity: 0.4;
-}
-
-.bubble6 {
-  width: 20px;
-  height: 20px;
-  left: 50%;
-  bottom: 40px;
-  animation-delay: -5s;
-  animation-duration: 42s;
-  opacity: 0.2;
-}
-
-.bubble7 {
-  width: 40px;
-  height: 40px;
-  left: 30%;
-  bottom: 40px;
-  animation-delay: -21s;
-  animation-duration: 48s;
-  opacity: 0.3;
-}
-
-.bubble8 {
-  width: 30px;
-  height: 30px;
-  left: 60%;
-  bottom: 40px;
-  animation-delay: -13.75s;
-  animation-duration: 40s;
-  opacity: 0.3;
-}
-
-/*circles*/
-.circle {
-  position: absolute;
-  background-color: white;
-  opacity: 0.1;
-  border-radius: 50%;
-  z-index: 99;
-}
-
-.circle:nth-of-type(1) {
-  height: 10em;
-  width: 10em;
-  right: 0;
-  bottom: -100px;
-}
-
-.circle:nth-of-type(2) {
-  height: 15em;
-  width: 15em;
-  right: 10px;
-  bottom: -180px;
-}
-
-.circle:nth-of-type(3) {
-  height: 20em;
-  width: 20em;
-  left: 0;
-  top: 700px;
-}
-
-.circle:nth-of-type(4) {
-  height: 15em;
-  width: 15em;
-  right: 0;
-  bottom: 0;
 }/*# sourceMappingURL=index.css.map */
