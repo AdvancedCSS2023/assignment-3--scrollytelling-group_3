@@ -39,7 +39,6 @@ The project is maintained and contributed by Eva, who is the sole developer and 
 
 ### [Contact me](https://github.com/evafha)
 
-**Extra
 [^1]: More detailed instructions.
     1. First, you will need to create a GitHub account if you don't already have one. Go to [GitHub](github.com) and follow the prompts to create an account.
     2. Once you have a GitHub account, go to the project repository you want to fork. In this case, it's the "United Nations Goal 13: Climate Action" project.
