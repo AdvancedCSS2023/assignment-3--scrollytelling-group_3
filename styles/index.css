@@ -173,6 +173,7 @@
 }
 
 html {
+  font-size: 1vw;
   scroll-behavior: smooth;
 }
 
@@ -694,7 +695,8 @@ a.five-download img {
   grid-area: six-picture-two;
 }
 
-img.six-picture, img.six-picture-two {
+img.six-picture,
+img.six-picture-two {
   height: 15em;
   width: auto;
 }
