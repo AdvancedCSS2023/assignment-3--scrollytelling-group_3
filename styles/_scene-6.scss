@@ -28,8 +28,8 @@
 
 img.six-picture,
 img.six-picture-two {
-    height: 20em;
-    width: 15em;
+    height: 15em;
+    width: auto;
 }
 
 div.six-help > p:first-of-type {
@@ -38,14 +38,14 @@ div.six-help > p:first-of-type {
 
 .animation-from-left {
     opacity: 0;
-    transform: translateX(-300px);
+    transform: translateX(-200px);
     transition: transform 0.7s ease-out;
     transition-delay: 0.3s;
 }
 
 .animation-from-right {
     opacity: 0;
-    transform: translateX(300px);
+    transform: translateX(200px);
     transition: transform 0.7s ease-out;
     transition-delay: 0.3s;
 }

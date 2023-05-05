@@ -19,7 +19,11 @@ Getting started with the "United Nations Goal 13: Climate Action" project is eas
 
 The project uses amongst other things HTML, CSS and JavaScript, so it is **recommended** that you have a basic understanding of these technologies before diving in.
 
-**Instructions[^1]**
+## Instructions[^1]:
+1. Go to the GitHub repository that you want to fork.
+2. Click on the "Fork" button in the top-right corner of the repository page.
+3. Select the account where you want to fork the repository. If you have multiple accounts, make sure you select the correct one.
+4. Wait for GitHub to create a fork of the repository. This may take a few seconds to complete.
 
 ### Furthermore
 The objective of this project is to design a webpage using only CSS **without** using any additional JavaScript code. This means that all the dynamic and interactive features of the webpage should be created solely using CSS styling and animations. This can be a challenging task, but it allows for a more lightweight and efficient webpage that loads faster and has better performance. It also provides an opportunity to showcase advanced CSS skills and techniques. With careful planning and creativity, it is possible to create a visually appealing and engaging webpage using only CSS.
