@@ -38,14 +38,14 @@ div.six-help > p:first-of-type {
 
 .animation-from-left {
     opacity: 0;
-    transform: translateX(-200px);
+    transform: translateX(-100px);
     transition: transform 0.7s ease-out;
     transition-delay: 0.3s;
 }
 
 .animation-from-right {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(100px);
     transition: transform 0.7s ease-out;
     transition-delay: 0.3s;
 }
