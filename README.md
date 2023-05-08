@@ -51,3 +51,4 @@ The project is maintained and contributed by Eva, who is the sole developer and 
     7. Once you have the project open in your text editor, you can start exploring the code and making changes. To view the project in your web browser, simply open the `index.html` file.
 
     That's it! You're now ready to start working with the "United Nations Goal 13: Climate Action" project.
+    
